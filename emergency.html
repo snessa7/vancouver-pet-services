@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 Emergency Pet Care in Vancouver, WA - Vancouver Pet Services Directory</title>
+    <meta name="description" content="Find 24/7 emergency veterinary services in Vancouver, WA. Get immediate help for your pet with our list of emergency animal hospitals.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .emergency-notice {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        
+        .content {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .business-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .business-card.emergency {
+            border-color: #e74c3c;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .business-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-type {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-info {
+            margin: 1rem 0;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-icon {
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .contact-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .emergency-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .business-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">🐾 Vancouver Pet Services</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="veterinary.html">Veterinary</a></li>
+                    <li><a href="grooming.html">Grooming</a></li>
+                    <li><a href="boarding.html">Boarding</a></li>
+                    <li><a href="training.html">Training</a></li>
+                    <li><a href="pet-stores.html">Pet Stores</a></li>
+                    <li><a href="emergency.html">Emergency</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>🚨 24/7 Emergency Pet Care</h1>
+            <p>Immediate veterinary care when your pet needs it most</p>
+        </div>
+    </section>
+
+    <div class="content">
+        <div class="container">
+            <div class="emergency-notice">
+                ⚠️ IN CASE OF EMERGENCY: Call ahead if possible to ensure immediate care availability
+            </div>
+
+            <h2 class="section-title">24/7 Emergency Veterinary Hospitals</h2>
+            
+            <div class="business-grid">
+                <div class="business-card emergency">
+                    <span class="emergency-badge">24/7 EMERGENCY</span>
+                    <h3 class="business-name">Pacific Northwest Pet Emergency & Specialty Center</h3>
+                    <p class="business-type">24/7 Emergency & Specialty Care</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>815 SE 160th Avenue, Vancouver, WA 98683</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>(360) 635-5302</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>24/7 emergency care, specialty treatments</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✅</span>
+                            <span>Pre-registration available</span>
+                        </div>
+                    </div>
+                    <a href="tel:+13606355302" class="contact-btn">📞 CALL NOW</a>
+                </div>
+
+                <div class="business-card emergency">
+                    <span class="emergency-badge">EMERGENCY CARE</span>
+                    <h3 class="business-name">MedVet Vancouver</h3>
+                    <p class="business-type">Emergency and Specialty Care</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>2913 NE 72nd Dr, Vancouver, WA 98661</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>(360) 839-2704</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>Emergency and specialty veterinary care</span>
+                        </div>
+                    </div>
+                    <a href="tel:+13608392704" class="contact-btn">📞 CALL NOW</a>
+                </div>
+
+                <div class="business-card emergency">
+                    <span class="emergency-badge">EMERGENCY CARE</span>
+                    <h3 class="business-name">St. Francis Animal Hospital</h3>
+                    <p class="business-type">Emergency Veterinary Care</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>12010 NE 65th St, Vancouver, WA 98682</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>(360) 253-5446</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>Emergency veterinary services</span>
+                        </div>
+                    </div>
+                    <a href="tel:+13602535446" class="contact-btn">📞 CALL NOW</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Specialty Veterinary Centers</h2>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3 class="business-name">Columbia River Veterinary Specialists</h3>
+                    <p class="business-type">Specialty Veterinary Care</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>6607 NE 84th St #109, Vancouver, WA 98665</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>(360) 694-3007</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>Specialized veterinary treatments</span>
+                        </div>
+                    </div>
+                    <a href="tel:+13606943007" class="contact-btn">📞 Call Now</a>
+                </div>
+            </div>
+
+            <div class="emergency-notice" style="background-color: #3498db; margin-top: 3rem;">
+                💡 TIP: Save these emergency numbers in your phone now, before you need them!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click tracking for business cards
+        document.querySelectorAll('.business-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const businessName = this.querySelector('.business-name').textContent;
+                console.log('Clicked on: ' + businessName);
+                // Here you could add analytics tracking
+            });
+        });
+    </script>
+<script src="ui-enhance.js"></script>
+</body>
+</html>

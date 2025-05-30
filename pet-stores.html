@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Stores & Supplies in Vancouver, WA - Vancouver Pet Services Directory</title>
+    <meta name="description" content="Find pet stores in Vancouver, WA. From major retailers to local specialty shops, discover where to buy pet food, supplies, and more.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .business-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .business-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-type {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .business-info {
+            margin: 1rem 0;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-icon {
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .features {
+            background-color: #ecf0f1;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        
+        .features strong {
+            color: #2c3e50;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .business-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">🐾 Vancouver Pet Services</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="veterinary.html">Veterinary</a></li>
+                    <li><a href="grooming.html">Grooming</a></li>
+                    <li><a href="boarding.html">Boarding</a></li>
+                    <li><a href="training.html">Training</a></li>
+                    <li><a href="pet-stores.html">Pet Stores</a></li>
+                    <li><a href="emergency.html">Emergency</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Pet Stores & Supplies in Vancouver, WA</h1>
+            <p>Find everything your pet needs from major retailers to local specialty shops</p>
+        </div>
+    </section>
+
+    <div class="content">
+        <div class="container">
+            <h2 class="section-title">Major Retailers</h2>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3 class="business-name">PetSmart</h3>
+                    <p class="business-type">Full-Service Pet Retailer</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Multiple Vancouver locations</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛍️</span>
+                            <span>Pet food, supplies, grooming, training</span>
+                        </div>
+                        <div class="features">
+                            <strong>Services:</strong> Banfield Veterinary Clinic, PetsHotel/Doggie Daycare, animal adoptions
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">🌐 Visit Website</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">Petco</h3>
+                    <p class="business-type">Premium Pet Products</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Multiple Vancouver locations</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛍️</span>
+                            <span>10,000+ high-quality pet products</span>
+                        </div>
+                        <div class="features">
+                            <strong>Services:</strong> Grooming salon, professional dog training, pet photography
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">🌐 Visit Website</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Local & Specialty Stores</h2>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3 class="business-name">Beastie Boutique</h3>
+                    <p class="business-type">Premium Pet Boutique</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Vancouver WA and Camas area</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛍️</span>
+                            <span>Premium pet foods, pet clothing, grooming</span>
+                        </div>
+                        <div class="features">
+                            <strong>Specialties:</strong> Allergen-free foods, breed-specific items, supplements<br>
+                            <strong>Philosophy:</strong> "We treat your pet like family"
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">Nature's Pet Market</h3>
+                    <p class="business-type">Natural Pet Foods & Nutrition</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Hazel Dell neighborhood, Vancouver</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🐕</span>
+                            <span>Dog-friendly store, locally-owned</span>
+                        </div>
+                        <div class="features">
+                            <strong>Services:</strong> Certified pet dietitian, raw dog food specialist, self-wash, full-service grooming
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">Theresa's Country Feed & Pet</h3>
+                    <p class="business-type">Family-Owned Pet Supply</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Wood Village Town Center</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🐕</span>
+                            <span>Dogs welcome inside</span>
+                        </div>
+                        <div class="features">
+                            <strong>Features:</strong> Trained staff for product advice, family-owned business
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">Fang! Pet & Garden Supply</h3>
+                    <p class="business-type">Health-Focused Pet Supply</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">🎯</span>
+                            <span>Health and well-being products</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛍️</span>
+                            <span>Carefully chosen pet food & supplements</span>
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click tracking for business cards
+        document.querySelectorAll('.business-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const businessName = this.querySelector('.business-name').textContent;
+                console.log('Clicked on: ' + businessName);
+                // Here you could add analytics tracking
+            });
+        });
+    </script>
+<script src="ui-enhance.js"></script>
+</body>
+</html>
