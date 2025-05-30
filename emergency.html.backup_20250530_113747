@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Services in Vancouver, WA - Vancouver Pet Services Directory</title>
-    <meta name="description" content="Find trusted veterinarians in Vancouver, WA. Complete list of veterinary clinics, animal hospitals, and specialty care for your pets.">
+    <title>24/7 Emergency Pet Care in Vancouver, WA - Vancouver Pet Services Directory</title>
+    <meta name="description" content="Find 24/7 emergency veterinary services in Vancouver, WA. Get immediate help for your pet with our list of emergency animal hospitals.">
     <style>
         * {
             margin: 0;
@@ -67,7 +67,7 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             padding: 3rem 0;
             text-align: center;
@@ -81,6 +81,15 @@
         .hero p {
             font-size: 1.2rem;
             opacity: 0.9;
+        }
+        
+        .emergency-notice {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2rem;
         }
         
         .content {
@@ -107,6 +116,11 @@
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .business-card.emergency {
+            border-color: #e74c3c;
         }
         
         .business-card:hover {
@@ -144,28 +158,29 @@
         
         .contact-btn {
             display: inline-block;
-            background-color: #3498db;
+            background-color: #e74c3c;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             text-decoration: none;
             margin-top: 1rem;
             transition: background-color 0.3s;
+            font-weight: bold;
         }
         
         .contact-btn:hover {
-            background-color: #2980b9;
+            background-color: #c0392b;
         }
         
-        .features {
-            background-color: #ecf0f1;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-        
-        .features strong {
-            color: #2c3e50;
+        .emergency-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
         
         @media (max-width: 768px) {
@@ -178,40 +193,7 @@
             }
         }
     </style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4RSJ394H7V');
-
-  // Track phone clicks for lead generation
-  document.addEventListener('DOMContentLoaded', function() {
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        gtag('event', 'phone_click', {
-          'event_category': 'engagement',
-          'event_label': this.href.replace('tel:', ''),
-          'value': 1
-        });
-      });
-    });
-
-    // Track Get Listed button clicks
-    const ctaButtons = document.querySelectorAll('.cta-button, .hero-cta');
-    ctaButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        gtag('event', 'get_listed_click', {
-          'event_category': 'lead_generation',
-          'event_label': window.location.pathname,
-          'value': 1
-        });
-      });
-    });
-  });
-</script>\n</head>
+</head>
 <body>
     <header class="header">
         <div class="container">
@@ -232,98 +214,114 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Veterinary Services in Vancouver, WA</h1>
-            <p>Comprehensive care for your pets from trusted local veterinarians</p>
+            <h1>🚨 24/7 Emergency Pet Care</h1>
+            <p>Immediate veterinary care when your pet needs it most</p>
         </div>
     </section>
 
     <div class="content">
         <div class="container">
-            <h2 class="section-title">Primary Care Veterinarians</h2>
+            <div class="emergency-notice">
+                ⚠️ IN CASE OF EMERGENCY: Call ahead if possible to ensure immediate care availability
+            </div>
+
+            <h2 class="section-title">24/7 Emergency Veterinary Hospitals</h2>
             
             <div class="business-grid">
-                <div class="business-card">
-                    <h3 class="business-name">Salmon Creek Veterinary Clinic</h3>
-                    <p class="business-type">Full-Service Veterinary Care</p>
+                <div class="business-card emergency">
+                    <span class="emergency-badge">24/7 EMERGENCY</span>
+                    <h3 class="business-name">Pacific Northwest Pet Emergency & Specialty Center</h3>
+                    <p class="business-type">24/7 Emergency & Specialty Care</p>
                     <div class="business-info">
                         <div class="info-item">
                             <span class="info-icon">📍</span>
-                            <span>12709 NE Hwy 99, Vancouver, WA 98686</span>
+                            <span>815 SE 160th Avenue, Vancouver, WA 98683</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon">📞</span>
-                            <span>(360) 574-0833</span>
+                            <span><strong>(360) 635-5302</strong></span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon">🏥</span>
-                            <span>Wellness exams, vaccinations, dental care, surgery</span>
+                            <span>24/7 emergency care, specialty treatments</span>
                         </div>
-                        <div class="features">
-                            <strong>Specialties:</strong> Rabbit & guinea pig wellness programs<br>
-                            <strong>Features:</strong> Digital radiology, in-house lab, pharmacy
+                        <div class="info-item">
+                            <span class="info-icon">✅</span>
+                            <span>Pre-registration available</span>
                         </div>
                     </div>
-                    <a href="tel:+13605740833" class="contact-btn">📞 Call Now</a>
+                    <a href="tel:+13606355302" class="contact-btn">📞 CALL NOW</a>
                 </div>
 
-                <div class="business-card">
-                    <h3 class="business-name">Mountain View Veterinary Hospital</h3>
-                    <p class="business-type">Comprehensive Veterinary Care</p>
+                <div class="business-card emergency">
+                    <span class="emergency-badge">EMERGENCY CARE</span>
+                    <h3 class="business-name">MedVet Vancouver</h3>
+                    <p class="business-type">Emergency and Specialty Care</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Comprehensive veterinary care with boarding</span>
+                            <span class="info-icon">📍</span>
+                            <span>2913 NE 72nd Dr, Vancouver, WA 98661</span>
                         </div>
-                        <div class="info-item">
-                            <span class="info-icon">📅</span>
-                            <span>6 days/week service</span>
-                        </div>
-                        <div class="features">
-                            <strong>Features:</strong> Clean boarding facility, multiple daily walks for boarding pets
-                        </div>
-                    </div>
-                    <a href="#" class="contact-btn">📞 Call Now</a>
-                </div>
-
-                <div class="business-card">
-                    <h3 class="business-name">Cascade Park Animal Hospital</h3>
-                    <p class="business-type">AAHA Accredited Veterinary Care</p>
-                    <div class="business-info">
-                        <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Veterinary care with special needs boarding</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">⭐</span>
-                            <span>AAHA accredited facility</span>
-                        </div>
-                        <div class="features">
-                            <strong>Specialties:</strong> Medical boarding, post-surgical care<br>
-                            <strong>Features:</strong> On-site veterinarians for boarding pets
-                        </div>
-                    </div>
-                    <a href="#" class="contact-btn">📞 Call Now</a>
-                </div>
-
-                <div class="business-card">
-                    <h3 class="business-name">Anderson Animal Hospital & Pet Grooming</h3>
-                    <p class="business-type">Full-Service Animal Hospital</p>
-                    <div class="business-info">
                         <div class="info-item">
                             <span class="info-icon">📞</span>
-                            <span>(604) 263-6767</span>
+                            <span><strong>(360) 839-2704</strong></span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon">🏥</span>
-                            <span>Veterinary care, boarding, grooming</span>
-                        </div>
-                        <div class="features">
-                            <strong>Specialties:</strong> Exotic animals, wide range of species<br>
-                            <strong>Features:</strong> On-site treatment and diagnosis
+                            <span>Emergency and specialty veterinary care</span>
                         </div>
                     </div>
-                    <a href="tel:+16042636767" class="contact-btn">📞 Call Now</a>
+                    <a href="tel:+13608392704" class="contact-btn">📞 CALL NOW</a>
                 </div>
+
+                <div class="business-card emergency">
+                    <span class="emergency-badge">EMERGENCY CARE</span>
+                    <h3 class="business-name">St. Francis Animal Hospital</h3>
+                    <p class="business-type">Emergency Veterinary Care</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>12010 NE 65th St, Vancouver, WA 98682</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>(360) 253-5446</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>Emergency veterinary services</span>
+                        </div>
+                    </div>
+                    <a href="tel:+13602535446" class="contact-btn">📞 CALL NOW</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Specialty Veterinary Centers</h2>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3 class="business-name">Columbia River Veterinary Specialists</h3>
+                    <p class="business-type">Specialty Veterinary Care</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>6607 NE 84th St #109, Vancouver, WA 98665</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span><strong>(360) 694-3007</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>Specialized veterinary treatments</span>
+                        </div>
+                    </div>
+                    <a href="tel:+13606943007" class="contact-btn">📞 Call Now</a>
+                </div>
+            </div>
+
+            <div class="emergency-notice" style="background-color: #3498db; margin-top: 3rem;">
+                💡 TIP: Save these emergency numbers in your phone now, before you need them!
             </div>
         </div>
     </div>

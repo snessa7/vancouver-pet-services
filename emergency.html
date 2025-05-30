@@ -193,7 +193,40 @@
             }
         }
     </style>
-</head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RSJ394H7V');
+
+  // Track phone clicks for lead generation
+  document.addEventListener('DOMContentLoaded', function() {
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        gtag('event', 'phone_click', {
+          'event_category': 'engagement',
+          'event_label': this.href.replace('tel:', ''),
+          'value': 1
+        });
+      });
+    });
+
+    // Track Get Listed button clicks
+    const ctaButtons = document.querySelectorAll('.cta-button, .hero-cta');
+    ctaButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        gtag('event', 'get_listed_click', {
+          'event_category': 'lead_generation',
+          'event_label': window.location.pathname,
+          'value': 1
+        });
+      });
+    });
+  });
+</script>\n</head>
 <body>
     <header class="header">
         <div class="container">

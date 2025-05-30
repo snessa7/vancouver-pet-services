@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Services in Vancouver, WA - Vancouver Pet Services Directory</title>
-    <meta name="description" content="Find trusted veterinarians in Vancouver, WA. Complete list of veterinary clinics, animal hospitals, and specialty care for your pets.">
+    <title>Pet Training Services in Vancouver, WA - Vancouver Pet Services Directory</title>
+    <meta name="description" content="Find professional dog training services in Vancouver, WA. From puppy training to behavioral modification, discover local trainers near you.">
     <style>
         * {
             margin: 0;
@@ -67,7 +67,7 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 3rem 0;
             text-align: center;
@@ -178,40 +178,7 @@
             }
         }
     </style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4RSJ394H7V');
-
-  // Track phone clicks for lead generation
-  document.addEventListener('DOMContentLoaded', function() {
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        gtag('event', 'phone_click', {
-          'event_category': 'engagement',
-          'event_label': this.href.replace('tel:', ''),
-          'value': 1
-        });
-      });
-    });
-
-    // Track Get Listed button clicks
-    const ctaButtons = document.querySelectorAll('.cta-button, .hero-cta');
-    ctaButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        gtag('event', 'get_listed_click', {
-          'event_category': 'lead_generation',
-          'event_label': window.location.pathname,
-          'value': 1
-        });
-      });
-    });
-  });
-</script>\n</head>
+</head>
 <body>
     <header class="header">
         <div class="container">
@@ -232,97 +199,151 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Veterinary Services in Vancouver, WA</h1>
-            <p>Comprehensive care for your pets from trusted local veterinarians</p>
+            <h1>Pet Training Services in Vancouver, WA</h1>
+            <p>Professional dog training from basic obedience to specialized behavior modification</p>
         </div>
     </section>
 
     <div class="content">
         <div class="container">
-            <h2 class="section-title">Primary Care Veterinarians</h2>
+            <h2 class="section-title">Professional Training Centers</h2>
             
             <div class="business-grid">
                 <div class="business-card">
-                    <h3 class="business-name">Salmon Creek Veterinary Clinic</h3>
-                    <p class="business-type">Full-Service Veterinary Care</p>
+                    <h3 class="business-name">A Dog's Best Friend</h3>
+                    <p class="business-type">Award-Winning Training Center</p>
                     <div class="business-info">
                         <div class="info-item">
                             <span class="info-icon">📍</span>
-                            <span>12709 NE Hwy 99, Vancouver, WA 98686</span>
+                            <span>East & West Vancouver locations</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <span>(360) 574-0833</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Wellness exams, vaccinations, dental care, surgery</span>
+                            <span class="info-icon">🎯</span>
+                            <span>Group training, private sessions, daycare</span>
                         </div>
                         <div class="features">
-                            <strong>Specialties:</strong> Rabbit & guinea pig wellness programs<br>
-                            <strong>Features:</strong> Digital radiology, in-house lab, pharmacy
+                            <strong>Special Features:</strong> Structured supervised playgroups, temperament assessments, specialized programs
                         </div>
                     </div>
-                    <a href="tel:+13605740833" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
 
                 <div class="business-card">
-                    <h3 class="business-name">Mountain View Veterinary Hospital</h3>
-                    <p class="business-type">Comprehensive Veterinary Care</p>
+                    <h3 class="business-name">Humane Society for Southwest Washington</h3>
+                    <p class="business-type">Positive Reinforcement Training</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Comprehensive veterinary care with boarding</span>
+                            <span class="info-icon">📍</span>
+                            <span>906 SE 164th Avenue, Suite 100</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon">📅</span>
-                            <span>6 days/week service</span>
+                            <span class="info-icon">👤</span>
+                            <span>Trainer: Cierra (10+ years experience)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">💰</span>
+                            <span>Basic Manners: $180 | Private: $60-80/session</span>
                         </div>
                         <div class="features">
-                            <strong>Features:</strong> Clean boarding facility, multiple daily walks for boarding pets
+                            <strong>Classes:</strong> Basic Manners, Advanced Manners, Puppy classes, Online options available
                         </div>
                     </div>
-                    <a href="#" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
 
                 <div class="business-card">
-                    <h3 class="business-name">Cascade Park Animal Hospital</h3>
-                    <p class="business-type">AAHA Accredited Veterinary Care</p>
+                    <h3 class="business-name">Dog Days Dog Training</h3>
+                    <p class="business-type">Professional Dog Training</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Veterinary care with special needs boarding</span>
+                            <span class="info-icon">📍</span>
+                            <span>7206 NE 37th Ave., Unit A, Vancouver, WA 98665</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Hazel Dell area of Vancouver</span>
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">C J's Dog Training</h3>
+                    <p class="business-type">Professional Dog Training</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">🎯</span>
+                            <span>Professional dog training services</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon">⭐</span>
-                            <span>AAHA accredited facility</span>
-                        </div>
-                        <div class="features">
-                            <strong>Specialties:</strong> Medical boarding, post-surgical care<br>
-                            <strong>Features:</strong> On-site veterinarians for boarding pets
+                            <span>Highly rated local trainer</span>
                         </div>
                     </div>
-                    <a href="#" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
 
                 <div class="business-card">
-                    <h3 class="business-name">Anderson Animal Hospital & Pet Grooming</h3>
-                    <p class="business-type">Full-Service Animal Hospital</p>
+                    <h3 class="business-name">Blackwood Canine</h3>
+                    <p class="business-type">Specialized Dog Training</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <span>(604) 263-6767</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Veterinary care, boarding, grooming</span>
-                        </div>
-                        <div class="features">
-                            <strong>Specialties:</strong> Exotic animals, wide range of species<br>
-                            <strong>Features:</strong> On-site treatment and diagnosis
+                            <span class="info-icon">🎯</span>
+                            <span>Specialized dog training programs</span>
                         </div>
                     </div>
-                    <a href="tel:+16042636767" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">High Expectations Dog Training</h3>
+                    <p class="business-type">Professional Training Programs</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">🎯</span>
+                            <span>Professional dog training programs</span>
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Corporate Training Programs</h2>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3 class="business-name">PetSmart Dog Training</h3>
+                    <p class="business-type">Positive Reinforcement Training</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">🎯</span>
+                            <span>Certified trainers, positive reinforcement method</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📚</span>
+                            <span>Puppy & adult classes, 3 levels available</span>
+                        </div>
+                        <div class="features">
+                            <strong>Options:</strong> Group classes (4-10 dogs), private sessions, virtual training, savings packages
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">Mind Your Manners Dog Training & Daycare</h3>
+                    <p class="business-type">Training & Daycare Combo</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">🎯</span>
+                            <span>Obedience training with daycare services</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏢</span>
+                            <span>Specialization: Active breed management</span>
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
             </div>
         </div>

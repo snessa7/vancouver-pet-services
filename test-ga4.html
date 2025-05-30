@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA4 Testing Page - Vancouver Pet Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f4f4f4;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        button, .test-link {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        button:hover, .test-link:hover {
+            background: #5a67d8;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .business-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .long-content {
+            height: 2000px;
+            background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 GA4 Testing Page</h1>
+    
+    <div class="test-section">
+        <h2>📊 GA4 Status Check</h2>
+        <div id="ga-status" class="status info">Checking GA4 installation...</div>
+        <button onclick="checkGA4()">Re-check GA4 Status</button>
+    </div>
+
+    <div class="test-section">
+        <h2>🎯 Test Events</h2>
+        
+        <h3>1. Lead Generation Events</h3>
+        <button onclick="testGetListed()" class="cta-button">Get Listed Today!</button>
+        <button onclick="window.location.href='mailto:contact@vancouverpetservices.com'">Email Us</button>
+        
+        <h3>2. Phone Click Events</h3>
+        <div class="business-card">
+            <h3>Test Veterinary Clinic</h3>
+            <p>Call us: <a href="tel:+13601234567">📞 (360) 123-4567</a></p>
+        </div>
+        
+        <h3>3. Search Events</h3>
+        <input type="text" id="searchBar" placeholder="Search for pet services..." style="padding: 10px; width: 300px;">
+        
+        <h3>4. Category Navigation</h3>
+        <div class="categories">
+            <a href="#" class="test-link category-card">Veterinary Services</a>
+            <a href="#" class="test-link category-card">Pet Grooming</a>
+            <a href="#" class="test-link category-card">Pet Boarding</a>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📈 Event Log</h2>
+        <div id="event-log" style="background: white; padding: 10px; border: 1px solid #ddd; min-height: 100px; font-family: monospace; font-size: 12px;">
+            <em>Events will appear here as you interact with the page...</em>
+        </div>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📜 Scroll Tracking Test</h2>
+        <p>Scroll down to test scroll depth tracking (25%, 50%, 75%, 90%)</p>
+        <div class="long-content">
+            <h3>Start Scrolling...</h3>
+            <p style="position: sticky; top: 20px; background: white; padding: 10px; border: 1px solid #ddd;">
+                Scroll Progress: <span id="scroll-progress">0%</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Event logging
+        const logEvent = (eventName, params) => {
+            const log = document.getElementById('event-log');
+            const time = new Date().toLocaleTimeString();
+            const paramStr = params ? JSON.stringify(params, null, 2) : '';
+            log.innerHTML = `<div><strong>[${time}]</strong> Event: ${eventName} ${paramStr}</div>` + log.innerHTML;
+        };
+
+        // Override gtag to log events
+        const originalGtag = window.gtag;
+        window.gtag = function() {
+            if (originalGtag) {
+                originalGtag.apply(this, arguments);
+            }
+            if (arguments[0] === 'event') {
+                logEvent(arguments[1], arguments[2]);
+            }
+        };
+
+        // Check GA4 installation
+        function checkGA4() {
+            const status = document.getElementById('ga-status');
+            
+            if (typeof gtag !== 'undefined' && window.dataLayer) {
+                status.className = 'status success';
+                status.textContent = '✅ GA4 is installed and running! Measurement ID detected.';
+                
+                // Log some debug info
+                console.log('GA4 Status:', {
+                    gtag: typeof gtag,
+                    dataLayer: window.dataLayer.length + ' items',
+                    cookies: document.cookie
+                });
+            } else {
+                status.className = 'status error';
+                status.textContent = '❌ GA4 not detected. Please run the installation script.';
+            }
+        }
+
+        // Test functions
+        function testGetListed() {
+            console.log('Get Listed clicked');
+            // This will be tracked automatically by the GA4 code
+        }
+
+        function clearLog() {
+            document.getElementById('event-log').innerHTML = '<em>Log cleared. Interact with the page to see new events...</em>';
+        }
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+            document.getElementById('scroll-progress').textContent = scrollPercent + '%';
+        });
+
+        // Check GA4 on load
+        window.addEventListener('load', function() {
+            setTimeout(checkGA4, 1000);
+        });
+
+        // Track business views
+        window.addEventListener('load', function() {
+            if (typeof trackBusinessView === 'function') {
+                trackBusinessView('Test Veterinary Clinic', 'Veterinary');
+            }
+        });
+    </script>
+</body>
+</html>

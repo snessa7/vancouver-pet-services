@@ -1,0 +1,130 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX', {
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: window.location.pathname
+  });
+
+  // Enhanced Ecommerce - Track business listing views
+  function trackBusinessView(businessName, category) {
+    gtag('event', 'view_item', {
+      currency: 'USD',
+      value: 0,
+      items: [{
+        item_id: businessName.toLowerCase().replace(/\s+/g, '-'),
+        item_name: businessName,
+        item_category: category,
+        item_variant: 'free_listing',
+        price: 0,
+        quantity: 1
+      }]
+    });
+  }
+
+  // Track phone clicks
+  document.addEventListener('DOMContentLoaded', function() {
+    // Phone number click tracking
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const phoneNumber = this.href.replace('tel:', '');
+        const businessName = this.closest('.business-card')?.querySelector('h3')?.textContent || 'Unknown';
+        
+        gtag('event', 'phone_click', {
+          event_category: 'engagement',
+          event_label: businessName,
+          value: phoneNumber
+        });
+      });
+    });
+
+    // Get Listed button tracking
+    const ctaButtons = document.querySelectorAll('.cta-button, .hero-cta, button[onclick*="mailto"]');
+    ctaButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        gtag('event', 'get_listed_click', {
+          event_category: 'lead_generation',
+          event_label: window.location.pathname,
+          value: 1
+        });
+      });
+    });
+
+    // Track search usage
+    const searchInput = document.querySelector('.search-bar input, #searchBar');
+    if (searchInput) {
+      let searchTimeout;
+      searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          if (this.value.length > 2) {
+            gtag('event', 'search', {
+              search_term: this.value,
+              event_category: 'engagement'
+            });
+          }
+        }, 1000);
+      });
+    }
+
+    // Track category navigation
+    const categoryLinks = document.querySelectorAll('.categories a, .category-card');
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const category = this.textContent.trim();
+        gtag('event', 'category_click', {
+          event_category: 'navigation',
+          event_label: category
+        });
+      });
+    });
+  });
+
+  // Track scroll depth
+  let scrollDepths = [25, 50, 75, 90];
+  let scrollsReached = [];
+  
+  window.addEventListener('scroll', function() {
+    let scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+    
+    scrollDepths.forEach(depth => {
+      if (scrollPercent >= depth && !scrollsReached.includes(depth)) {
+        scrollsReached.push(depth);
+        gtag('event', 'scroll', {
+          event_category: 'engagement',
+          event_label: `${depth}%`,
+          value: depth
+        });
+      }
+    });
+  });
+</script>
+
+<!-- GDPR Privacy Notice Script -->
+<script>
+  // Simple privacy notice for GDPR compliance
+  if (!localStorage.getItem('cookieConsent')) {
+    window.addEventListener('load', function() {
+      const notice = document.createElement('div');
+      notice.innerHTML = `
+        <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: white; padding: 20px; text-align: center; z-index: 9999;">
+          <p style="margin: 0 0 10px 0;">We use cookies to analyze site traffic and optimize your experience. By continuing, you agree to our use of cookies.</p>
+          <button onclick="acceptCookies()" style="background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px;">Accept</button>
+          <a href="/privacy.html" style="color: #667eea;">Privacy Policy</a>
+        </div>
+      `;
+      document.body.appendChild(notice);
+    });
+  }
+  
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'true');
+    document.querySelector('div[style*="position: fixed"]').remove();
+  }
+</script>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Services in Vancouver, WA - Vancouver Pet Services Directory</title>
-    <meta name="description" content="Find trusted veterinarians in Vancouver, WA. Complete list of veterinary clinics, animal hospitals, and specialty care for your pets.">
+    <title>Pet Stores & Supplies in Vancouver, WA - Vancouver Pet Services Directory</title>
+    <meta name="description" content="Find pet stores in Vancouver, WA. From major retailers to local specialty shops, discover where to buy pet food, supplies, and more.">
     <style>
         * {
             margin: 0;
@@ -67,7 +67,7 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             padding: 3rem 0;
             text-align: center;
@@ -178,40 +178,7 @@
             }
         }
     </style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4RSJ394H7V');
-
-  // Track phone clicks for lead generation
-  document.addEventListener('DOMContentLoaded', function() {
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        gtag('event', 'phone_click', {
-          'event_category': 'engagement',
-          'event_label': this.href.replace('tel:', ''),
-          'value': 1
-        });
-      });
-    });
-
-    // Track Get Listed button clicks
-    const ctaButtons = document.querySelectorAll('.cta-button, .hero-cta');
-    ctaButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        gtag('event', 'get_listed_click', {
-          'event_category': 'lead_generation',
-          'event_label': window.location.pathname,
-          'value': 1
-        });
-      });
-    });
-  });
-</script>\n</head>
+</head>
 <body>
     <header class="header">
         <div class="container">
@@ -232,97 +199,130 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Veterinary Services in Vancouver, WA</h1>
-            <p>Comprehensive care for your pets from trusted local veterinarians</p>
+            <h1>Pet Stores & Supplies in Vancouver, WA</h1>
+            <p>Find everything your pet needs from major retailers to local specialty shops</p>
         </div>
     </section>
 
     <div class="content">
         <div class="container">
-            <h2 class="section-title">Primary Care Veterinarians</h2>
+            <h2 class="section-title">Major Retailers</h2>
             
             <div class="business-grid">
                 <div class="business-card">
-                    <h3 class="business-name">Salmon Creek Veterinary Clinic</h3>
-                    <p class="business-type">Full-Service Veterinary Care</p>
+                    <h3 class="business-name">PetSmart</h3>
+                    <p class="business-type">Full-Service Pet Retailer</p>
                     <div class="business-info">
                         <div class="info-item">
                             <span class="info-icon">📍</span>
-                            <span>12709 NE Hwy 99, Vancouver, WA 98686</span>
+                            <span>Multiple Vancouver locations</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <span>(360) 574-0833</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Wellness exams, vaccinations, dental care, surgery</span>
+                            <span class="info-icon">🛍️</span>
+                            <span>Pet food, supplies, grooming, training</span>
                         </div>
                         <div class="features">
-                            <strong>Specialties:</strong> Rabbit & guinea pig wellness programs<br>
-                            <strong>Features:</strong> Digital radiology, in-house lab, pharmacy
+                            <strong>Services:</strong> Banfield Veterinary Clinic, PetsHotel/Doggie Daycare, animal adoptions
                         </div>
                     </div>
-                    <a href="tel:+13605740833" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">🌐 Visit Website</a>
                 </div>
 
                 <div class="business-card">
-                    <h3 class="business-name">Mountain View Veterinary Hospital</h3>
-                    <p class="business-type">Comprehensive Veterinary Care</p>
+                    <h3 class="business-name">Petco</h3>
+                    <p class="business-type">Premium Pet Products</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Comprehensive veterinary care with boarding</span>
+                            <span class="info-icon">📍</span>
+                            <span>Multiple Vancouver locations</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon">📅</span>
-                            <span>6 days/week service</span>
+                            <span class="info-icon">🛍️</span>
+                            <span>10,000+ high-quality pet products</span>
                         </div>
                         <div class="features">
-                            <strong>Features:</strong> Clean boarding facility, multiple daily walks for boarding pets
+                            <strong>Services:</strong> Grooming salon, professional dog training, pet photography
                         </div>
                     </div>
-                    <a href="#" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">🌐 Visit Website</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Local & Specialty Stores</h2>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3 class="business-name">Beastie Boutique</h3>
+                    <p class="business-type">Premium Pet Boutique</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>Vancouver WA and Camas area</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛍️</span>
+                            <span>Premium pet foods, pet clothing, grooming</span>
+                        </div>
+                        <div class="features">
+                            <strong>Specialties:</strong> Allergen-free foods, breed-specific items, supplements<br>
+                            <strong>Philosophy:</strong> "We treat your pet like family"
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
 
                 <div class="business-card">
-                    <h3 class="business-name">Cascade Park Animal Hospital</h3>
-                    <p class="business-type">AAHA Accredited Veterinary Care</p>
+                    <h3 class="business-name">Nature's Pet Market</h3>
+                    <p class="business-type">Natural Pet Foods & Nutrition</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Veterinary care with special needs boarding</span>
+                            <span class="info-icon">📍</span>
+                            <span>Hazel Dell neighborhood, Vancouver</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon">⭐</span>
-                            <span>AAHA accredited facility</span>
+                            <span class="info-icon">🐕</span>
+                            <span>Dog-friendly store, locally-owned</span>
                         </div>
                         <div class="features">
-                            <strong>Specialties:</strong> Medical boarding, post-surgical care<br>
-                            <strong>Features:</strong> On-site veterinarians for boarding pets
+                            <strong>Services:</strong> Certified pet dietitian, raw dog food specialist, self-wash, full-service grooming
                         </div>
                     </div>
-                    <a href="#" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
 
                 <div class="business-card">
-                    <h3 class="business-name">Anderson Animal Hospital & Pet Grooming</h3>
-                    <p class="business-type">Full-Service Animal Hospital</p>
+                    <h3 class="business-name">Theresa's Country Feed & Pet</h3>
+                    <p class="business-type">Family-Owned Pet Supply</p>
                     <div class="business-info">
                         <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <span>(604) 263-6767</span>
+                            <span class="info-icon">📍</span>
+                            <span>Wood Village Town Center</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon">🏥</span>
-                            <span>Veterinary care, boarding, grooming</span>
+                            <span class="info-icon">🐕</span>
+                            <span>Dogs welcome inside</span>
                         </div>
                         <div class="features">
-                            <strong>Specialties:</strong> Exotic animals, wide range of species<br>
-                            <strong>Features:</strong> On-site treatment and diagnosis
+                            <strong>Features:</strong> Trained staff for product advice, family-owned business
                         </div>
                     </div>
-                    <a href="tel:+16042636767" class="contact-btn">📞 Call Now</a>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
+                </div>
+
+                <div class="business-card">
+                    <h3 class="business-name">Fang! Pet & Garden Supply</h3>
+                    <p class="business-type">Health-Focused Pet Supply</p>
+                    <div class="business-info">
+                        <div class="info-item">
+                            <span class="info-icon">🎯</span>
+                            <span>Health and well-being products</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛍️</span>
+                            <span>Carefully chosen pet food & supplements</span>
+                        </div>
+                    </div>
+                    <a href="#" class="contact-btn">📞 Contact Now</a>
                 </div>
             </div>
         </div>
