@@ -216,6 +216,12 @@
             font-size: 0.9rem;
         }
         
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
         .hero-visual {
             position: absolute;
             top: 0;
@@ -731,7 +737,7 @@
                 <li><a href="#categories">Categories</a></li>
                 <li><a href="#featured">Featured</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" onclick="openModal()" style="background: white; color: #667eea; padding: 0.5rem 1rem; border-radius: 20px;">List Your Business</a></li>
+                <li><a href="business-signup.html" style="background: white; color: #667eea; padding: 0.5rem 1rem; border-radius: 20px;">List Your Business</a></li>
             </ul>
         </nav>
     </header>
@@ -739,6 +745,10 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">🏆 Vancouver's #1 Pet Directory</div>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap;">
+                <div class="hero-badge" style="background: #e74c3c;">40+ Vancouver Pet Businesses Listed</div>
+                <div class="hero-badge" style="background: #f39c12; animation: pulse 2s infinite;">🎉 Free 60-Day Trial for New Businesses</div>
+            </div>
             <h1 class="hero-title">
                 <span class="hero-title-line1">Find The Perfect</span>
                 <span class="hero-title-line2">Pet Care Services</span>
@@ -764,9 +774,9 @@
             </div>
             
             <div class="hero-cta-section">
-                <button class="hero-cta-primary" onclick="openModal()">
+                <a href="business-signup.html" class="hero-cta-primary" style="text-decoration: none; display: inline-block;">
                     <i class="fas fa-plus-circle"></i> List Your Business FREE
-                </button>
+                </a>
                 <span class="hero-cta-text">Join 40+ local pet businesses</span>
             </div>
         </div>

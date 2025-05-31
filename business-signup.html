@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Business - Vancouver Pet Services</title>
+    <meta name="description" content="List your pet business on Vancouver Pet Services Directory. Free 60-day trial for new businesses. Reach local pet owners in Vancouver, WA.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .signup-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .signup-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .signup-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trial-badge {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .signup-form-container {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .signup-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        .submit-btn {
+            background: #667eea;
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .form-note {
+            background: #f0f8ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3498db;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .back-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4RSJ394H7V');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">🐾 Vancouver Pet Services</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="veterinary.html">Veterinary</a>
+                <a href="grooming.html">Grooming</a>
+                <a href="boarding.html">Boarding</a>
+                <a href="training.html">Training</a>
+                <a href="pet-stores.html">Pet Stores</a>
+                <a href="emergency.html">Emergency</a>
+                <a href="business-signup.html" class="active">List Your Business</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <section class="signup-hero">
+        <div class="container">
+            <h1>List Your Pet Business</h1>
+            <p>Join Vancouver's Premier Pet Services Directory</p>
+            <div class="trial-badge">
+                🎉 FREE 60-Day Trial - No Credit Card Required
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Why List With Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Increase Visibility</h3>
+                    <p>Reach thousands of local pet owners actively searching for services like yours</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Targeted Marketing</h3>
+                    <p>Connect with pet owners in Vancouver, WA and surrounding areas</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Risk-Free Trial</h3>
+                    <p>Try our service for 60 days absolutely free - see the results before you pay</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Premium Placement</h3>
+                    <p>Get featured placement in your category during your trial period</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="signup-form-container">
+        <form class="signup-form" name="business-signup" method="POST" data-netlify="true">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Start Your Free Trial</h2>
+            
+            <div class="form-note">
+                <i class="fas fa-info-circle"></i> <strong>Quick Setup:</strong> Fill out this form and we'll have your business listed within 24 hours!
+            </div>
+            
+            <div class="form-group">
+                <label for="businessName">Business Name <span class="required">*</span></label>
+                <input type="text" id="businessName" name="businessName" required placeholder="Your Pet Business Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="contactName">Your Name <span class="required">*</span></label>
+                <input type="text" id="contactName" name="contactName" required placeholder="First and Last Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="business@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="(360) 555-0123">
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Business Category <span class="required">*</span></label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="veterinary">Veterinary Clinic</option>
+                    <option value="grooming">Pet Grooming</option>
+                    <option value="boarding">Pet Boarding/Daycare</option>
+                    <option value="training">Pet Training</option>
+                    <option value="pet-store">Pet Store/Supplies</option>
+                    <option value="mobile-services">Mobile Services</option>
+                    <option value="emergency">Emergency Services</option>
+                    <option value="other">Other Pet Services</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="website">Website (optional)</label>
+                <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Business Address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St, Vancouver, WA 98660">
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Tell us about your business (optional)</label>
+                <textarea id="description" name="description" rows="4" placeholder="What makes your business special? What services do you offer?"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-rocket"></i> Start My Free 60-Day Trial
+            </button>
+        </form>
+        
+        <div class="back-link">
+            <a href="index.html">← Back to Directory</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Vancouver Pet Services Directory</h3>
+            <p>Connecting Vancouver, WA pet owners with the best local pet care professionals.</p>
+            
+            <p style="margin: 2rem 0;">
+                <a href="privacy.html" style="color: white; text-decoration: underline; margin-right: 1rem;">Privacy Policy</a>
+                <a href="terms.html" style="color: white; text-decoration: underline;">Terms of Service</a>
+            </p>
+            
+            <p>&copy; 2025 Vancouver Pet Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="ui-enhance.js"></script>
+    <script>
+        // Track form submissions
+        document.querySelector('.signup-form').addEventListener('submit', function(e) {
+            gtag('event', 'business_signup_submit', {
+                'event_category': 'lead_generation',
+                'event_label': 'free_trial_signup',
+                'value': 1
+            });
+        });
+        
+        // Track category selection
+        document.getElementById('category').addEventListener('change', function() {
+            if (this.value) {
+                gtag('event', 'category_selected', {
+                    'event_category': 'engagement',
+                    'event_label': this.value
+                });
+            }
+        });
+    </script>
+</body>
+</html>
