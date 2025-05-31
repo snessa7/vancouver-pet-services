@@ -857,7 +857,8 @@
             <h2>Contact Us</h2>
             <p class="contact-subtitle">Have a question, suggestion, or issue? We're here to help!</p>
             
-            <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
+            <form id="contactForm" name="contact" class="contact-form" method="POST" data-netlify="true" action="/success.html#contact">
+                <input type="hidden" name="form-name" value="contact">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="contactName">Your Name *</label>
@@ -940,7 +941,8 @@
             <h2>List Your Pet Business - FREE!</h2>
             <p>Get a FREE 60-day trial listing on Vancouver Pet Services Directory</p>
             
-            <form id="listingForm" onsubmit="handleSubmit(event)">
+            <form id="listingForm" name="business-listing" method="POST" data-netlify="true" action="/success.html">
+                <input type="hidden" name="form-name" value="business-listing">
                 <div class="form-group">
                     <label for="businessName">Business Name *</label>
                     <input type="text" id="businessName" name="businessName" required>
@@ -1192,44 +1194,9 @@
             document.head.appendChild(style);
         });
 
-        // Business listing form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            
-            // In production, this would send to your server
-            const subject = `New Pet Business Listing Request - ${data.businessName}`;
-            const body = `Business Name: ${data.businessName}%0D%0AContact Name: ${data.contactName}%0D%0AEmail: ${data.email}%0D%0APhone: ${data.phone}%0D%0ACategory: ${data.category}%0D%0AMessage: ${data.message}`;
-            
-            window.location.href = `mailto:sness7@icloud.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            alert('Thank you! We\'ll contact you within 24 hours to set up your free listing.');
-            closeModal();
-            event.target.reset();
-        }
-
-        // Contact form submission
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            
-            // Create structured email for contact inquiries
-            const subject = `Contact Form: ${data.contactReason} - ${data.contactName}`;
-            const body = `Contact Form Submission%0D%0A%0D%0AName: ${data.contactName}%0D%0AEmail: ${data.contactEmail}%0D%0APhone: ${data.contactPhone || 'Not provided'}%0D%0AReason: ${data.contactReason}%0D%0A%0D%0AMessage:%0D%0A${data.contactMessage}%0D%0A%0D%0A--- End of Form ---`;
-            
-            // Note: Update this email when you set up your business email
-            window.location.href = `mailto:sness7@icloud.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            alert('Thank you for contacting us! We\'ll respond within 24 hours.');
-            event.target.reset();
-            
-            // Scroll to top
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
+        // Note: Forms now use Netlify Forms - submissions will appear in your Netlify dashboard
+        // You'll get email notifications for each submission
+        // To access: Log into Netlify > Your Site > Forms
 
         // Search functionality
         function searchServices() {
