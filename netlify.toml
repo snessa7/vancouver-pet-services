@@ -6,3 +6,9 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+
+# Ensure forms work properly
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200

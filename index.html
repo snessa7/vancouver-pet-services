@@ -698,6 +698,23 @@
   });
 </script>\n</head>
 <body>
+    <!-- Hidden forms for Netlify to detect during build -->
+    <form name="business-listing" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="businessName">
+        <input type="text" name="contactName">
+        <input type="email" name="email">
+        <input type="tel" name="phone">
+        <input type="text" name="category">
+        <textarea name="message"></textarea>
+    </form>
+    
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="contactName">
+        <input type="email" name="contactEmail">
+        <input type="tel" name="contactPhone">
+        <input type="text" name="contactReason">
+        <textarea name="contactMessage"></textarea>
+    </form>
     <!-- Free Listing CTA Banner -->
     <div class="cta-banner">
         🎉 FREE 60-Day Trial for Pet Businesses! <a href="#contact-modal" onclick="openModal()">Claim Your Listing Now →</a>
