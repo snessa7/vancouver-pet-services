@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruff Roads Mobile Grooming - Featured Partner | Vancouver Pet Services</title>
+    <meta name="description" content="Ruff Roads Mobile Grooming brings luxury pet grooming to your door. Featuring blueberry facials, breed-specific cuts, and a state-of-the-art Hanvey Engineering van.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema Markup for Ruff Roads -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ruff Roads Mobile Grooming",
+      "image": "https://vancouverpetservices.com/images/featured/ruff-roads/van-hero.jpg",
+      "description": "Luxury mobile pet grooming serving Vancouver & Portland Metro areas",
+      "@id": "https://vancouverpetservices.com/ruff-roads-showcase.html",
+      "url": "https://ruffroadsmobilegrooming.com",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vancouver",
+        "addressRegion": "WA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.6387,
+        "longitude": -122.6615
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "150"
+      },
+      "priceRange": "$$$",
+      "servesCuisine": "Pet Grooming",
+      "sameAs": [
+        "https://www.facebook.com/ruffroadsgrooming",
+        "https://www.instagram.com/ruffroadsmobilegrooming"
+      ]
+    }
+    </script>
+    
+    <style>
+        /* Showcase Hero Section */
+        .showcase-hero {
+            position: relative;
+            min-height: 70vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .showcase-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        .showcase-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .showcase-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .showcase-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .showcase-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .showcase-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .showcase-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .showcase-cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        /* Van showcase section */
+        .van-showcase {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .van-showcase-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .van-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .van-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .van-image::after {
+            content: '🚐 State-of-the-Art Mobile Grooming';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .van-details h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .feature-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .feature-list li::before {
+            content: '✨';
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Services Carousel */
+        .services-showcase {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        /* Instagram Section */
+        .instagram-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .instagram-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .instagram-post {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+        
+        .instagram-post:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .testimonial-pet {
+            color: #7f8c8d;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: #667eea;
+            opacity: 0.2;
+        }
+        
+        /* Service Area Map */
+        .service-area {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .map-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .service-area-box {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px dashed #667eea;
+        }
+        
+        .area-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .area-item {
+            padding: 0.5rem;
+            background: white;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .showcase-title {
+                font-size: 2.5rem;
+            }
+            
+            .van-showcase-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4RSJ394H7V');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">🐾 Vancouver Pet Services</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#featured-businesses">Featured Partners</a>
+                <a href="grooming.html">All Groomers</a>
+                <a href="business-signup.html">List Your Business</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="showcase-hero">
+        <div class="showcase-hero-content">
+            <div class="featured-badge">⭐ FEATURED PARTNER</div>
+            <h1 class="showcase-title">Ruff Roads Mobile Grooming</h1>
+            <p class="showcase-subtitle">Luxury Pet Grooming That Comes to You</p>
+            <div class="showcase-cta-group">
+                <a href="https://ruffroadsmobilegrooming.com" class="showcase-cta" target="_blank">
+                    <i class="fas fa-globe"></i> Visit Website
+                </a>
+                <a href="https://www.instagram.com/ruffroadsmobilegrooming" class="showcase-cta showcase-cta-secondary" target="_blank">
+                    <i class="fab fa-instagram"></i> Follow on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Van Showcase -->
+    <section class="van-showcase">
+        <div class="van-showcase-content">
+            <div class="van-image">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                    🚐✨
+                </div>
+            </div>
+            <div class="van-details">
+                <h2>State-of-the-Art Mobile Grooming</h2>
+                <p>Experience the ultimate in pet grooming convenience with our brand new Hanvey Engineering luxury grooming van.</p>
+                <ul class="feature-list">
+                    <li>100-gallon fresh water capacity</li>
+                    <li>Self-contained power system</li>
+                    <li>Climate-controlled environment</li>
+                    <li>Professional grooming equipment</li>
+                    <li>Hydraulic grooming table</li>
+                </ul>
+                <a href="#book-now" class="showcase-cta">Book Your Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-showcase">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Premium Grooming Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🫐</div>
+                    <h3 class="service-name">Blueberry Facial</h3>
+                    <p>Our signature spa treatment that brightens and cleans your pet's face while providing a relaxing aromatherapy experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3 class="service-name">Breed-Specific Cuts</h3>
+                    <p>Expert styling tailored to your pet's breed standards or your personal preferences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛁</div>
+                    <h3 class="service-name">Full-Service Bath</h3>
+                    <p>Luxurious bathing experience with premium shampoos and conditioners suited to your pet's coat type.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💅</div>
+                    <h3 class="service-name">Nail Care</h3>
+                    <p>Professional nail trimming and filing to keep your pet's paws healthy and comfortable.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎀</div>
+                    <h3 class="service-name">Finishing Touches</h3>
+                    <p>Cute bows, ties, and bandanas to make your pet look their absolute best!</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🐾</div>
+                    <h3 class="service-name">Paw Care</h3>
+                    <p>Paw pad treatment and fur trimming for optimal comfort and hygiene.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">👨‍💼</div>
+                    <h3 class="team-name">Juan Gutierrez</h3>
+                    <p class="team-role">Owner & Master Groomer</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">👩‍💼</div>
+                    <h3 class="team-name">Shelby</h3>
+                    <p class="team-role">Head Groomer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Follow Our Journey</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">
+                <a href="https://www.instagram.com/ruffroadsmobilegrooming" target="_blank" style="color: #667eea; font-weight: bold;">
+                    @ruffroadsmobilegrooming
+                </a>
+            </p>
+            <div class="instagram-feed">
+                <div class="instagram-post">📸</div>
+                <div class="instagram-post">🐕</div>
+                <div class="instagram-post">✨</div>
+                <div class="instagram-post">🎀</div>
+                <div class="instagram-post">🫧</div>
+                <div class="instagram-post">🐩</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Happy Customers</h2>
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-quote">
+                    "Ruff Roads is absolutely amazing! They come right to our door, and our dogs Daisy and Dash always look and smell incredible after their spa day. The blueberry facial is their favorite!"
+                </p>
+                <p class="testimonial-author">Sarah M.</p>
+                <p class="testimonial-pet">Pet Parents of Daisy & Dash 🐕🐕</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="service-area">
+        <div class="map-container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Service Areas</h2>
+            <div class="service-area-box">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">We Come to You!</h3>
+                <p>Proudly serving the Vancouver & Portland Metro Areas</p>
+                <div class="area-list">
+                    <div class="area-item">📍 Vancouver, WA</div>
+                    <div class="area-item">📍 Camas</div>
+                    <div class="area-item">📍 Washougal</div>
+                    <div class="area-item">📍 Battle Ground</div>
+                    <div class="area-item">📍 Ridgefield</div>
+                    <div class="area-item">📍 Portland Metro</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="book-now">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready for a Grooming Experience Like No Other?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Book your appointment today and see why pet parents love Ruff Roads!</p>
+            <div class="showcase-cta-group">
+                <a href="https://ruffroadsmobilegrooming.com" class="showcase-cta" target="_blank">
+                    Book Now
+                </a>
+                <a href="tel:+1234567890" class="showcase-cta showcase-cta-secondary">
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>This is a featured partner showcase on Vancouver Pet Services Directory</p>
+            <p><a href="business-signup.html" style="color: white; text-decoration: underline;">Want your own showcase? Sign up for free!</a></p>
+        </div>
+    </footer>
+
+    <script src="ui-enhance.js"></script>
+    <script>
+        // Track showcase page views
+        gtag('event', 'page_view', {
+            page_title: 'Ruff Roads Showcase',
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            custom_parameter: 'featured_business_showcase'
+        });
+        
+        // Track CTA clicks
+        document.querySelectorAll('.showcase-cta').forEach(cta => {
+            cta.addEventListener('click', function() {
+                gtag('event', 'showcase_cta_click', {
+                    event_category: 'engagement',
+                    event_label: 'ruff_roads_' + this.textContent.trim().toLowerCase().replace(/\s+/g, '_')
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -582,6 +582,240 @@
             margin-bottom: 3rem;
         }
         
+        /* Featured Businesses Section */
+        .featured-businesses {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f3ff 0%, #e9e6ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-businesses::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .featured-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .featured-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .sparkle {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.5; transform: scale(1.2) rotate(180deg); }
+        }
+        
+        .featured-subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .featured-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-card.featured-active {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+        
+        .featured-card.featured-placeholder {
+            opacity: 0.7;
+            border: 3px dashed #cbd5e0;
+            background: #f7fafc;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+        
+        .featured-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-image-placeholder {
+            font-size: 4rem;
+            color: white;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .featured-content {
+            padding: 2rem;
+        }
+        
+        .featured-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stars {
+            color: #f39c12;
+        }
+        
+        .rating-text {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .featured-tagline {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .featured-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            background: #e6f4ff;
+            color: #0369a1;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .featured-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .placeholder-content {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        .placeholder-title {
+            font-size: 1.5rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+        
+        .placeholder-text {
+            color: #718096;
+            margin-bottom: 1.5rem;
+        }
+        
+        .placeholder-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .placeholder-benefits li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+        }
+        
+        .placeholder-cta {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #2d3748;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .placeholder-cta:hover {
+            background: #cbd5e0;
+            transform: translateY(-2px);
+        }
+        
         .contact-form {
             background: white;
             padding: 2.5rem;
@@ -734,8 +968,8 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#featured-businesses">Featured Partners</a></li>
                 <li><a href="#categories">Categories</a></li>
-                <li><a href="#featured">Featured</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="business-signup.html" style="background: white; color: #667eea; padding: 0.5rem 1rem; border-radius: 20px;">List Your Business</a></li>
             </ul>
@@ -786,6 +1020,84 @@
             <div class="floating-icon icon-2">🐈</div>
             <div class="floating-icon icon-3">🦴</div>
             <div class="floating-icon icon-4">🐾</div>
+        </div>
+    </section>
+
+    <!-- Featured Businesses Section -->
+    <section class="featured-businesses" id="featured-businesses">
+        <div class="featured-container">
+            <div class="featured-header">
+                <h2 class="featured-title">
+                    <span class="sparkle">✨</span>
+                    Featured Partners
+                    <span class="sparkle">✨</span>
+                </h2>
+                <p class="featured-subtitle">Premium showcases for exceptional pet businesses</p>
+            </div>
+            
+            <div class="featured-grid">
+                <!-- Ruff Roads Featured Card -->
+                <div class="featured-card featured-active">
+                    <div class="featured-badge">⭐ FEATURED PARTNER</div>
+                    <div class="featured-image">
+                        <div class="featured-image-placeholder">
+                            🚐✨
+                        </div>
+                    </div>
+                    <div class="featured-content">
+                        <h3 class="featured-name">Ruff Roads Mobile Grooming</h3>
+                        <div class="featured-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">5.0 (150+ reviews)</span>
+                        </div>
+                        <p class="featured-tagline">Luxury Mobile Grooming at Your Door</p>
+                        <div class="featured-highlights">
+                            <span class="highlight">🫐 Blueberry Facials</span>
+                            <span class="highlight">🚐 State-of-the-Art Van</span>
+                            <span class="highlight">📍 Vancouver & Portland</span>
+                        </div>
+                        <a href="ruff-roads-showcase.html" class="featured-cta">
+                            View Full Showcase →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder Card 1 -->
+                <div class="featured-card featured-placeholder">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">🏆</div>
+                        <h3 class="placeholder-title">Your Business Here</h3>
+                        <p class="placeholder-text">Get your own premium showcase</p>
+                        <ul class="placeholder-benefits">
+                            <li>✓ Dedicated showcase page</li>
+                            <li>✓ Priority placement</li>
+                            <li>✓ Instagram integration</li>
+                            <li>✓ Direct booking links</li>
+                        </ul>
+                        <a href="business-signup.html" class="placeholder-cta">
+                            Claim Your Spot - 60 Days Free!
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder Card 2 -->
+                <div class="featured-card featured-placeholder">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">🌟</div>
+                        <h3 class="placeholder-title">Featured Listing Available</h3>
+                        <p class="placeholder-text">Join our exclusive partners</p>
+                        <ul class="placeholder-benefits">
+                            <li>✓ Professional photos</li>
+                            <li>✓ Customer testimonials</li>
+                            <li>✓ Service area maps</li>
+                            <li>✓ Social media feeds</li>
+                        </ul>
+                        <a href="business-signup.html" class="placeholder-cta">
+                            Get Started Today!
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
