@@ -56,40 +56,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Enhanced search functionality
+    // Enhanced search functionality for category pages
     const searchBox = document.querySelector('.search-box, #searchBar, .search-input');
     if (searchBox) {
-        searchBox.addEventListener('focus', function() {
-            if (this.parentElement) {
-                this.parentElement.style.transform = 'scale(1.05)';
+        // Real-time search filtering
+        if (!window.searchBusinesses && document.querySelectorAll('.business-card').length > 0) {
+            // Create no results message
+            const noResultsDiv = document.createElement('div');
+            noResultsDiv.id = 'noResults';
+            noResultsDiv.style.cssText = `
+                display: none;
+                text-align: center;
+                padding: 3rem;
+                color: #6b7280;
+                font-size: 1.2rem;
+            `;
+            noResultsDiv.innerHTML = `
+                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; display: block; color: #d1d5db;"></i>
+                <p>No businesses match your search.</p>
+                <p style="font-size: 1rem; margin-top: 0.5rem;">Try different keywords or browse all listings.</p>
+            `;
+            
+            const businessGrid = document.querySelector('.business-grid');
+            if (businessGrid && !document.getElementById('noResults')) {
+                businessGrid.parentNode.insertBefore(noResultsDiv, businessGrid.nextSibling);
             }
-        });
-        
-        searchBox.addEventListener('blur', function() {
-            if (this.parentElement) {
-                this.parentElement.style.transform = 'scale(1)';
-            }
-        });
-
-        // Add real-time search if not already implemented
-        if (!window.searchBusinesses) {
+            
             searchBox.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase().trim();
                 const businessCards = document.querySelectorAll('.business-card');
                 let hasResults = false;
 
                 businessCards.forEach(card => {
-                    const name = card.getAttribute('data-name') || '';
-                    const services = card.getAttribute('data-services') || '';
                     const textContent = card.textContent.toLowerCase();
+                    const businessName = card.querySelector('.business-name')?.textContent.toLowerCase() || '';
+                    const businessType = card.querySelector('.business-type')?.textContent.toLowerCase() || '';
                     
                     const isMatch = searchTerm === '' || 
-                                   name.includes(searchTerm) || 
-                                   services.includes(searchTerm) || 
+                                   businessName.includes(searchTerm) || 
+                                   businessType.includes(searchTerm) || 
                                    textContent.includes(searchTerm);
 
                     if (isMatch) {
                         card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.3s ease-out';
                         hasResults = true;
                     } else {
                         card.style.display = 'none';
@@ -99,7 +109,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show/hide no results message
                 const noResults = document.getElementById('noResults');
                 if (noResults) {
-                    noResults.style.display = hasResults ? 'none' : 'block';
+                    noResults.style.display = hasResults || searchTerm === '' ? 'none' : 'block';
+                }
+                
+                // Update results count
+                const visibleCount = Array.from(businessCards).filter(card => card.style.display !== 'none').length;
+                const totalCount = businessCards.length;
+                
+                let countDisplay = document.getElementById('resultCount');
+                if (!countDisplay && businessGrid) {
+                    countDisplay = document.createElement('div');
+                    countDisplay.id = 'resultCount';
+                    countDisplay.style.cssText = `
+                        text-align: center;
+                        color: #6b7280;
+                        margin-bottom: 1rem;
+                        font-size: 0.9rem;
+                    `;
+                    businessGrid.parentNode.insertBefore(countDisplay, businessGrid);
+                }
+                
+                if (countDisplay) {
+                    if (searchTerm && visibleCount < totalCount) {
+                        countDisplay.textContent = `Showing ${visibleCount} of ${totalCount} businesses`;
+                        countDisplay.style.display = 'block';
+                    } else {
+                        countDisplay.style.display = 'none';
+                    }
                 }
             });
         }
@@ -320,6 +356,17 @@ style.textContent = `
 
     @keyframes spin {
         to { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeIn {
+        from { 
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Responsive improvements */

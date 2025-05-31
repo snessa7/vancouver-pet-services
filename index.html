@@ -26,6 +26,295 @@
             line-height: 1.6;
             color: #333;
         }
+        
+        /* New Hero Section Styles */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 1rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-title-line1 {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .hero-title-line2 {
+            display: block;
+            background: linear-gradient(to right, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .search-container {
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .search-box-wrapper {
+            background: white;
+            border-radius: 60px;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .search-box-wrapper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+        }
+        
+        .search-icon {
+            padding: 0 1.5rem;
+            color: #667eea;
+            font-size: 1.25rem;
+        }
+        
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            color: #333;
+        }
+        
+        .search-input::placeholder {
+            color: #9ca3af;
+        }
+        
+        .search-btn-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn-modern:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            transform: scale(1.05);
+        }
+        
+        .quick-search-tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .quick-tag {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .quick-tag:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .hero-cta-section {
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .hero-cta-primary {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-cta-text {
+            display: block;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .hero-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .icon-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .icon-2 {
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+        
+        .icon-3 {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+        
+        .icon-4 {
+            top: 40%;
+            right: 20%;
+            animation-delay: 15s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(90deg); }
+            50% { transform: translate(-20px, 20px) rotate(180deg); }
+            75% { transform: translate(40px, 10px) rotate(270deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title-line1 {
+                font-size: 2rem;
+            }
+            
+            .search-box-wrapper {
+                flex-direction: column;
+                padding: 1rem;
+                border-radius: 20px;
+            }
+            
+            .search-input {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            .search-btn-modern {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .quick-search-tags {
+                justify-content: center;
+            }
+        }
 
         /* Featured Section Enhancements */
         .featured {
@@ -429,17 +718,46 @@
     </header>
 
     <section class="hero" id="home">
-        <h1>Find Vancouver's Best Pet Services</h1>
-        <p>Your complete directory for veterinarians, grooming, boarding, training & more in Vancouver, WA</p>
-        <div class="search-box">
-            <input type="text" placeholder="Search for pet services..." id="searchInput">
-            <button class="search-btn" onclick="searchServices()">
-                <i class="fas fa-search"></i> Search
-            </button>
+        <div class="hero-content">
+            <div class="hero-badge">🏆 Vancouver's #1 Pet Directory</div>
+            <h1 class="hero-title">
+                <span class="hero-title-line1">Find The Perfect</span>
+                <span class="hero-title-line2">Pet Care Services</span>
+            </h1>
+            <p class="hero-subtitle">Connect with trusted veterinarians, groomers, trainers, and more in Vancouver, WA</p>
+            
+            <div class="search-container">
+                <div class="search-box-wrapper">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="text" placeholder="Try 'emergency vet' or 'dog grooming'..." id="searchInput" class="search-input">
+                    <button class="search-btn-modern" onclick="searchServices()">
+                        Find Services
+                    </button>
+                </div>
+                <div class="quick-search-tags">
+                    <span class="quick-tag" onclick="quickSearch('emergency')">🚨 Emergency</span>
+                    <span class="quick-tag" onclick="quickSearch('grooming')">✂️ Grooming</span>
+                    <span class="quick-tag" onclick="quickSearch('boarding')">🏨 Boarding</span>
+                    <span class="quick-tag" onclick="quickSearch('vet')">🏥 Veterinary</span>
+                </div>
+            </div>
+            
+            <div class="hero-cta-section">
+                <button class="hero-cta-primary" onclick="openModal()">
+                    <i class="fas fa-plus-circle"></i> List Your Business FREE
+                </button>
+                <span class="hero-cta-text">Join 40+ local pet businesses</span>
+            </div>
         </div>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-            Are you a pet business? <a href="#" onclick="openModal()" style="color: white; text-decoration: underline;">Get listed for FREE!</a>
-        </p>
+        
+        <div class="hero-visual">
+            <div class="floating-icon icon-1">🐕</div>
+            <div class="floating-icon icon-2">🐈</div>
+            <div class="floating-icon icon-3">🦴</div>
+            <div class="floating-icon icon-4">🐾</div>
+        </div>
     </section>
 
     <section class="stats">
@@ -690,6 +1008,189 @@
                 modal.style.display = 'none';
             }
         }
+
+        // Enhanced search functionality
+        function searchServices() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                // Animate the search box to indicate it needs input
+                const searchBox = document.querySelector('.search-box-wrapper');
+                searchBox.classList.add('shake');
+                setTimeout(() => searchBox.classList.remove('shake'), 500);
+                searchInput.focus();
+                return;
+            }
+            
+            // Enhanced search mappings with more keywords
+            const searchMatches = {
+                'vet': 'veterinary.html',
+                'veterinary': 'veterinary.html',
+                'veterinarian': 'veterinary.html',
+                'animal hospital': 'veterinary.html',
+                'animal clinic': 'veterinary.html',
+                'pet hospital': 'veterinary.html',
+                'pet doctor': 'veterinary.html',
+                'groom': 'grooming.html',
+                'grooming': 'grooming.html',
+                'groomer': 'grooming.html',
+                'pet spa': 'grooming.html',
+                'dog wash': 'grooming.html',
+                'bath': 'grooming.html',
+                'nail': 'grooming.html',
+                'board': 'boarding.html',
+                'boarding': 'boarding.html',
+                'daycare': 'boarding.html',
+                'dog daycare': 'boarding.html',
+                'pet hotel': 'boarding.html',
+                'kennel': 'boarding.html',
+                'pet sitting': 'boarding.html',
+                'train': 'training.html',
+                'training': 'training.html',
+                'trainer': 'training.html',
+                'obedience': 'training.html',
+                'behavior': 'training.html',
+                'puppy': 'training.html',
+                'pet store': 'pet-stores.html',
+                'pet shop': 'pet-stores.html',
+                'supplies': 'pet-stores.html',
+                'food': 'pet-stores.html',
+                'pet food': 'pet-stores.html',
+                'toys': 'pet-stores.html',
+                'emergency': 'emergency.html',
+                '24 hour': 'emergency.html',
+                '24/7': 'emergency.html',
+                'urgent': 'emergency.html',
+                'after hours': 'emergency.html'
+            };
+            
+            // Check if search term matches any category
+            for (const [keyword, page] of Object.entries(searchMatches)) {
+                if (searchTerm.includes(keyword)) {
+                    // Add loading animation
+                    const btn = document.querySelector('.search-btn-modern');
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Finding...';
+                    
+                    setTimeout(() => {
+                        window.location.href = page;
+                    }, 300);
+                    return;
+                }
+            }
+            
+            // If no specific match, show helpful message and categories
+            if (searchTerm.includes('dog') || searchTerm.includes('cat') || searchTerm.includes('pet')) {
+                showSearchMessage('Showing all pet service categories', 'info');
+                document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                showSearchMessage(`No exact match for "${searchTerm}". Browse our categories below:`, 'warning');
+                document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Quick search function for tags
+        function quickSearch(term) {
+            document.getElementById('searchInput').value = term;
+            searchServices();
+        }
+        
+        // Show search message
+        function showSearchMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `search-message ${type}`;
+            messageDiv.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${type === 'warning' ? '#f59e0b' : '#3b82f6'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+                z-index: 1000;
+                animation: slideDown 0.5s ease-out;
+            `;
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.animation = 'slideUp 0.5s ease-out';
+                setTimeout(() => messageDiv.remove(), 500);
+            }, 3000);
+        }
+        
+        // Enhanced search interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                // Enter key to search
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchServices();
+                    }
+                });
+                
+                // Focus animation
+                searchInput.addEventListener('focus', function() {
+                    document.querySelector('.search-box-wrapper').classList.add('focused');
+                });
+                
+                searchInput.addEventListener('blur', function() {
+                    document.querySelector('.search-box-wrapper').classList.remove('focused');
+                });
+                
+                // Auto-suggestions (future enhancement)
+                let searchTimeout;
+                searchInput.addEventListener('input', function() {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        // Could add auto-suggestions here
+                    }, 300);
+                });
+            }
+            
+            // Add animation classes
+            const style = document.createElement('style');
+            style.textContent = `
+                .shake {
+                    animation: shake 0.5s ease-in-out;
+                }
+                
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    25% { transform: translateX(-10px); }
+                    75% { transform: translateX(10px); }
+                }
+                
+                @keyframes slideDown {
+                    from { transform: translate(-50%, -100%); opacity: 0; }
+                    to { transform: translate(-50%, 0); opacity: 1; }
+                }
+                
+                @keyframes slideUp {
+                    from { transform: translate(-50%, 0); opacity: 1; }
+                    to { transform: translate(-50%, -100%); opacity: 0; }
+                }
+                
+                .search-box-wrapper.focused {
+                    transform: translateY(-2px) scale(1.02);
+                    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+                }
+                
+                .fas.fa-spinner.fa-spin {
+                    animation: spin 1s linear infinite;
+                }
+                
+                @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
 
         // Business listing form submission
         function handleSubmit(event) {
