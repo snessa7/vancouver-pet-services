@@ -56,16 +56,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Enhance search functionality
-    const searchBox = document.querySelector('.search-box');
+    // Enhanced search functionality
+    const searchBox = document.querySelector('.search-box, #searchBar, .search-input');
     if (searchBox) {
         searchBox.addEventListener('focus', function() {
-            this.parentElement.style.transform = 'scale(1.05)';
+            if (this.parentElement) {
+                this.parentElement.style.transform = 'scale(1.05)';
+            }
         });
         
         searchBox.addEventListener('blur', function() {
-            this.parentElement.style.transform = 'scale(1)';
+            if (this.parentElement) {
+                this.parentElement.style.transform = 'scale(1)';
+            }
         });
+
+        // Add real-time search if not already implemented
+        if (!window.searchBusinesses) {
+            searchBox.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                const businessCards = document.querySelectorAll('.business-card');
+                let hasResults = false;
+
+                businessCards.forEach(card => {
+                    const name = card.getAttribute('data-name') || '';
+                    const services = card.getAttribute('data-services') || '';
+                    const textContent = card.textContent.toLowerCase();
+                    
+                    const isMatch = searchTerm === '' || 
+                                   name.includes(searchTerm) || 
+                                   services.includes(searchTerm) || 
+                                   textContent.includes(searchTerm);
+
+                    if (isMatch) {
+                        card.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide no results message
+                const noResults = document.getElementById('noResults');
+                if (noResults) {
+                    noResults.style.display = hasResults ? 'none' : 'block';
+                }
+            });
+        }
     }
 
     // Add fade-in animation to elements

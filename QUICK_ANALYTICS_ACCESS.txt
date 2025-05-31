@@ -1,0 +1,21 @@
+# 🎯 QUICK ANALYTICS ACCESS
+
+## The Only 3 Things You Need to Remember:
+
+### 1. DAILY CHECK (30 seconds)
+https://analytics.google.com → Vancouver Pet Services Directory → Realtime
+**Look for:** Active users, phone clicks
+
+### 2. YOUR LOGIN INFO
+- **GA4 Property:** Vancouver Pet Services Directory
+- **Measurement ID:** G-4RSJ394H7V  
+- **Website:** https://vancouverpetservices.com
+
+### 3. PHONE CLICKS = MONEY
+Each phone click in GA4 = potential customer for businesses = proof of value = higher prices you can charge
+
+## FUTURE REMINDER:
+**June 30, 2025:** Set up Google Analytics API with Claude
+
+## FULL GUIDE:
+See: `ANALYTICS_MEMORY_GUIDE.md` in this same folder
