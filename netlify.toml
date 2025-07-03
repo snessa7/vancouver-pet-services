@@ -15,11 +15,8 @@
   to = "/success.html?form=business"
   status = 301
 
-# Error pages
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 404
+# Removed catch-all redirect that was interfering with form submissions
+# Forms should redirect to their success pages properly now
 
 [build]
   publish = "."
