@@ -2,7 +2,7 @@
 
 ## Current Status
 - **Public Display:** info@vancouverpetservices.com (professional)
-- **Forms Send To:** sness7@icloud.com (your personal email for now)
+- **Forms Send To:** info@vancouverpetservices.com
 
 ## To Set Up Professional Email
 
@@ -27,7 +27,7 @@ Once you buy a domain like `vancouverpetservices.com`:
 ## When You're Ready
 Update these two places in `index.html`:
 
-1. **Line 690:** Change `mailto:sness7@icloud.com` to your new email
+1. **Line 690:** Email is already set to info@vancouverpetservices.com
 2. **Line 671:** Change the business listing email handler
 
 ## Benefits of Professional Email

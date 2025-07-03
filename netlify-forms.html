@@ -1,0 +1,24 @@
+<!-- This hidden file helps Netlify detect forms during build -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <select name="reason">
+    <option value="General Question">General Question</option>
+    <option value="Business Listing Inquiry">Business Listing Inquiry</option>
+    <option value="Technical Issue">Technical Issue</option>
+  </select>
+  <textarea name="message"></textarea>
+</form>
+
+<form name="business-signup" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="business-name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <select name="business-type">
+    <option value="Veterinary">Veterinary</option>
+    <option value="Grooming">Grooming</option>
+    <option value="Boarding">Boarding</option>
+  </select>
+  <textarea name="description"></textarea>
+</form>

@@ -1,0 +1,27 @@
+[2025-06-01 14:48:45] Checking MX records...
+[2025-06-01 14:48:45] ERROR: No MX records found for vancouverpetservices.com
+[2025-06-01 14:48:45] Checking TXT records for SPF...
+[2025-06-01 14:48:45] ERROR: SPF record not found
+[2025-06-01 14:48:45] ERROR: DNS not fully configured
+[2025-06-01 14:50:39] Checking MX records...
+[2025-06-01 14:50:39] ERROR: No MX records found for vancouverpetservices.com
+[2025-06-01 14:50:39] Checking TXT records for SPF...
+[2025-06-01 14:50:39] ERROR: SPF record not found
+[2025-06-01 14:50:39] ERROR: DNS not fully configured
+[2025-06-15 10:35:36] [INFO] Email Forwarding Test Script Started
+[2025-06-15 10:35:36] [INFO] Testing domain: vancouverpetservices.com
+[2025-06-15 10:35:36] [INFO] Forwarding: info@vancouverpetservices.com → snessa7@gmail.com
+[2025-06-15 10:35:36] [INFO] Starting continuous test - checking every 15 minutes
+[2025-06-15 10:35:36] [INFO] Will run for maximum 48 hours
+[2025-06-15 10:35:36] [INFO] === Starting Email Forwarding Test Cycle ===
+[2025-06-15 10:35:36] [INFO] Current MX records: []
+[2025-06-15 10:35:36] [INFO] Current TXT records: []
+[2025-06-15 10:35:36] [WARNING] DNS not fully propagated yet. Waiting...
+[2025-06-15 10:35:36] [WARNING] Missing MX records: mx1.improvmx.com, mx2.improvmx.com
+[2025-06-15 10:35:36] [WARNING] Missing SPF TXT record: v=spf1 include:spf.improvmx.com ~all
+[2025-06-15 10:35:36] [INFO] Next test at: 2025-06-15 10:50:36
+[2025-06-15 10:37:40] Checking MX records...
+[2025-06-15 10:37:40] ERROR: No MX records found for vancouverpetservices.com
+[2025-06-15 10:37:40] Checking TXT records for SPF...
+[2025-06-15 10:37:40] ERROR: SPF record not found
+[2025-06-15 10:37:40] ERROR: DNS not fully configured

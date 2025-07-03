@@ -27,7 +27,7 @@ Would you like me to set up your free listing today?
 Best regards,
 [Your Name]
 Vancouver Pet Services Directory
-sness7@icloud.com
+info@vancouverpetservices.com
 
 ---
 

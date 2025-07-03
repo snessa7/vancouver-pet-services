@@ -52,7 +52,7 @@ Once you have paying customers:
 
 ## 📞 Support
 
-Questions? Email: sness7@icloud.com
+Questions? Email: info@vancouverpetservices.com
 
 ---
 

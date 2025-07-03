@@ -196,7 +196,7 @@ If they ask for more info:
 
 ## 🚨 IMPORTANT REMINDERS
 
-1. **Send from professional email** (not sness7@icloud.com)
+1. **Send from professional email** (info@vancouverpetservices.com)
 2. **Include website URL** in signature
 3. **Check spam folder** for responses
 4. **Respond quickly** to any interest (same day)

@@ -1,0 +1,11 @@
+{
+  "last_check": "2025-06-15T10:35:36.785301",
+  "dns_mx_configured": false,
+  "dns_txt_configured": false,
+  "dns_fully_propagated": false,
+  "email_sent": false,
+  "email_delivered": false,
+  "test_emails": [],
+  "mx_records": [],
+  "txt_records": []
+}
