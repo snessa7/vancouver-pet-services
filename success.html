@@ -4,283 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - Vancouver Pet Services Directory</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Thank you for contacting Vancouver Pet Services Directory. We'll get back to you soon!">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .success-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        
-        .success-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 600px;
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            animation: scaleIn 0.8s ease-out;
-        }
-        
-        .success-icon i {
-            font-size: 40px;
-            color: white;
-        }
-        
-        .success-title {
-            font-size: 2.5rem;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-        
-        .success-message {
-            font-size: 1.25rem;
-            color: #6b7280;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-        
-        .business-message {
-            background: #f3f4f6;
-            border-left: 4px solid #667eea;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-        
-        .business-message h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-        
-        .business-message ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .business-message li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .business-message li i {
-            color: #10b981;
-            margin-right: 0.75rem;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-        
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .success-card {
-                padding: 2rem;
-            }
-            
-            .success-title {
-                font-size: 2rem;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
-    <!-- Google Analytics 4 -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4RSJ394H7V');
-      
-      // Track form submission success
-      gtag('event', 'form_submit', {
-        'event_category': 'engagement',
-        'event_label': window.location.hash === '#contact' ? 'contact_form' : 'business_listing_form',
-        'value': 1
-      });
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4RSJ394H7V');
     </script>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <a href="/" class="logo">🐾 Vancouver Pet Services</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#categories">Categories</a></li>
+                <li><a href="/#featured">Featured</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
-    
-    <div class="success-container">
-        <div class="success-card">
+
+    <!-- Success Content -->
+    <main class="success-container">
+        <div class="success-content">
             <div class="success-icon">
-                <i class="fas fa-check"></i>
+                <i class="fas fa-check-circle"></i>
             </div>
             
             <h1 class="success-title">Thank You!</h1>
             
-            <div id="contactSuccess" style="display: none;">
-                <p class="success-message">
-                    Your message has been received successfully.<br>
-                    We'll respond to your inquiry within 24 hours.
-                </p>
+            <div id="success-message" class="success-message">
+                <!-- Default message -->
+                <p>Your message has been successfully sent. We'll get back to you within 24 hours!</p>
             </div>
             
-            <div id="businessSuccess">
-                <p class="success-message">
-                    Your business listing request has been submitted!<br>
-                    We're excited to have you join our directory.
-                </p>
-                
-                <div class="business-message">
-                    <h3>What happens next?</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> You'll receive a confirmation email within 1 hour</li>
-                        <li><i class="fas fa-phone"></i> We'll contact you within 24 hours to finalize your listing</li>
-                        <li><i class="fas fa-rocket"></i> Your FREE 60-day trial will begin once approved</li>
-                        <li><i class="fas fa-chart-line"></i> You'll get access to analytics and listing management</li>
-                    </ul>
+            <div class="success-actions">
+                <a href="/" class="success-cta">
+                    <i class="fas fa-home"></i>
+                    Back to Directory
+                </a>
+            </div>
+            
+            <!-- Additional Information -->
+            <div style="margin-top: 3rem; padding: 2rem; background: var(--card-bg); border-radius: 15px; border: 1px solid var(--border-color);">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">What's Next?</h3>
+                <div style="color: var(--text-secondary); text-align: left;">
+                    <p style="margin-bottom: 1rem;"><strong>📧 Email Response:</strong> Check your email for a confirmation. We typically respond within 24 hours during business days.</p>
+                    <p style="margin-bottom: 1rem;"><strong>🕒 Business Hours:</strong> Monday - Friday, 9 AM - 6 PM Pacific Time</p>
+                    <p style="margin-bottom: 1rem;"><strong>📞 Urgent Matters:</strong> For urgent pet emergencies, please contact your local veterinarian directly.</p>
+                    <p><strong>🌟 Follow Us:</strong> Stay updated with the latest pet services and featured businesses in Vancouver, WA.</p>
                 </div>
             </div>
-            
-            <div class="action-buttons">
-                <a href="/" class="btn btn-primary">
-                    <i class="fas fa-home"></i> Back to Home
-                </a>
-                <a href="/#categories" class="btn btn-secondary">
-                    <i class="fas fa-search"></i> Browse Services
-                </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Vancouver Pet Services Directory</h3>
+            <p class="footer-description">
+                Connecting Vancouver, WA pet owners with the best local pet care professionals.
+            </p>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vancouver Pet Services Directory. Helping local pets and their families.</p>
             </div>
         </div>
-    </div>
-    
+    </footer>
+
     <script>
-        // Show appropriate message based on form type
-        if (window.location.hash === '#contact') {
-            document.getElementById('contactSuccess').style.display = 'block';
-            document.getElementById('businessSuccess').style.display = 'none';
+        // Dynamic success message based on URL parameters or referrer
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const formType = urlParams.get('form') || 'contact';
+            const messageElement = document.getElementById('success-message');
+            
+            // Track form submission completion
+            gtag('event', 'form_submit_success', {
+                'form_type': formType,
+                'event_category': 'engagement'
+            });
+            
+            // Customize message based on form type
+            if (formType === 'business') {
+                messageElement.innerHTML = `
+                    <p><strong>🎉 Welcome to Vancouver Pet Services!</strong></p>
+                    <p>Your business signup request has been received. We'll review your information and have your listing live within 24 hours.</p>
+                    <p>You'll receive an email with next steps and your login credentials shortly.</p>
+                `;
+            } else if (formType === 'contact') {
+                messageElement.innerHTML = `
+                    <p><strong>✅ Message Received!</strong></p>
+                    <p>Thank you for contacting Vancouver Pet Services Directory. We've received your message and will respond within 24 hours.</p>
+                    <p>If you need immediate assistance, please call your local veterinarian directly.</p>
+                `;
+            }
+            
+            // Add a subtle animation
+            const elements = document.querySelectorAll('.success-content > *');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`;
+            });
+        });
+        
+        // Particle effect for celebration
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 10px;
+                height: 10px;
+                background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1000;
+                animation: float 3s ease-out forwards;
+            `;
+            
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 3000);
         }
         
-        // Auto-redirect after 10 seconds
-        setTimeout(function() {
-            window.location.href = '/';
-        }, 10000);
+        // Create celebration particles
+        setTimeout(() => {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createParticle(), i * 100);
+            }
+        }, 500);
+        
+        // Add float animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

@@ -13,1148 +13,239 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Critical inline styles for faster rendering */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* New Hero Section Styles */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 4rem 1rem;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: fadeInDown 0.8s ease-out;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .hero-title-line1 {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-        
-        .hero-title-line2 {
-            display: block;
-            background: linear-gradient(to right, #fff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-        
-        .search-container {
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-        
-        .search-box-wrapper {
-            background: white;
-            border-radius: 60px;
-            padding: 0.75rem;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .search-box-wrapper:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
-        }
-        
-        .search-icon {
-            padding: 0 1.5rem;
-            color: #667eea;
-            font-size: 1.25rem;
-        }
-        
-        .search-input {
-            flex: 1;
-            border: none;
-            outline: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 0;
-            color: #333;
-        }
-        
-        .search-input::placeholder {
-            color: #9ca3af;
-        }
-        
-        .search-btn-modern {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .search-btn-modern:hover {
-            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-            transform: scale(1.05);
-        }
-        
-        .quick-search-tags {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .quick-tag {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .quick-tag:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-        
-        .hero-cta-section {
-            margin-top: 3rem;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-        
-        .hero-cta-primary {
-            background: white;
-            color: #667eea;
-            border: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .hero-cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero-cta-text {
-            display: block;
-            margin-top: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .hero-visual {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-        }
-        
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.1;
-            animation: float 20s infinite ease-in-out;
-        }
-        
-        .icon-1 {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .icon-2 {
-            top: 60%;
-            right: 10%;
-            animation-delay: 5s;
-        }
-        
-        .icon-3 {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 10s;
-        }
-        
-        .icon-4 {
-            top: 40%;
-            right: 20%;
-            animation-delay: 15s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(30px, -30px) rotate(90deg); }
-            50% { transform: translate(-20px, 20px) rotate(180deg); }
-            75% { transform: translate(40px, 10px) rotate(270deg); }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-title-line1 {
-                font-size: 2rem;
-            }
-            
-            .search-box-wrapper {
-                flex-direction: column;
-                padding: 1rem;
-                border-radius: 20px;
-            }
-            
-            .search-input {
-                width: 100%;
-                text-align: center;
-                padding: 1rem;
-            }
-            
-            .search-btn-modern {
-                width: 100%;
-                margin-top: 1rem;
-            }
-            
-            .quick-search-tags {
-                justify-content: center;
-            }
-        }
-
-        /* Featured Section Enhancements */
-        .featured {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            padding: 5rem 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .featured::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.03) 2px, transparent 2px);
-            background-size: 40px 40px;
-            animation: floatPattern 40s linear infinite;
-        }
-        
-        @keyframes floatPattern {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-40px, -40px) rotate(5deg); }
-        }
-        
-        .featured h2 {
-            text-align: center;
-            font-size: 2.75rem;
-            margin-bottom: 0.5rem;
-            color: #1f2937;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .featured-subtitle {
-            text-align: center;
-            color: #667eea;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            font-weight: 500;
-        }
-        
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .featured .business-card {
-            background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.12), 0 1px 3px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            border: 2px solid rgba(102, 126, 234, 0.1);
-            overflow: hidden;
-        }
-        
-        .featured .business-card::before {
-            content: '★ FEATURED';
-            position: absolute;
-            top: 20px;
-            right: -25px;
-            background: linear-gradient(135deg, #f59e0b, #f97316);
-            color: white;
-            padding: 6px 35px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            transform: rotate(45deg);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            letter-spacing: 0.5px;
-        }
-        
-        .featured .business-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #ec4899);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-            transform-origin: left;
-        }
-        
-        .featured .business-card:hover::after {
-            transform: scaleX(1);
-        }
-        
-        .featured .business-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2), 0 4px 8px rgba(0,0,0,0.05);
-            border-color: #667eea;
-        }
-        
-        .featured .business-name {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.75rem;
-            line-height: 1.2;
-        }
-        
-        .featured .business-type {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            display: inline-block;
-            padding: 0.375rem 1rem;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 25px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-        
-        .featured .business-info {
-            color: #4b5563;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-        }
-        
-        .featured .business-info i {
-            color: #667eea;
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* Mobile menu toggle */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Free Listing CTA */
-        .cta-banner {
-            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            font-weight: bold;
-        }
-
-        .cta-banner a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        /* Contact Form Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            color: #000;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            font-size: 1.1rem;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Contact Section Styles */
-        .contact-section {
-            background: #f8f9fa;
-            padding: 5rem 1rem;
-        }
-        
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .contact-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #1f2937;
-        }
-        
-        .contact-subtitle {
-            text-align: center;
-            color: #6b7280;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-        
-        /* Featured Businesses Section */
-        .featured-businesses {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f5f3ff 0%, #e9e6ff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .featured-businesses::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .featured-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .featured-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .featured-title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #1a202c;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .sparkle {
-            animation: sparkle 2s ease-in-out infinite;
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.5; transform: scale(1.2) rotate(180deg); }
-        }
-        
-        .featured-subtitle {
-            font-size: 1.2rem;
-            color: #4a5568;
-        }
-        
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .featured-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .featured-card.featured-active {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-        }
-        
-        .featured-card.featured-placeholder {
-            opacity: 0.7;
-            border: 3px dashed #cbd5e0;
-            background: #f7fafc;
-        }
-        
-        .featured-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            z-index: 10;
-            animation: pulse 2s infinite;
-        }
-        
-        .featured-image {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .featured-image-placeholder {
-            font-size: 4rem;
-            color: white;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .featured-content {
-            padding: 2rem;
-        }
-        
-        .featured-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #1a202c;
-            margin-bottom: 0.5rem;
-        }
-        
-        .featured-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .stars {
-            color: #f39c12;
-        }
-        
-        .rating-text {
-            color: #718096;
-            font-size: 0.9rem;
-        }
-        
-        .featured-tagline {
-            color: #4a5568;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .featured-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .highlight {
-            background: #e6f4ff;
-            color: #0369a1;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .featured-cta {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .featured-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        .placeholder-content {
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .placeholder-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
-        
-        .placeholder-title {
-            font-size: 1.5rem;
-            color: #4a5568;
-            margin-bottom: 0.5rem;
-        }
-        
-        .placeholder-text {
-            color: #718096;
-            margin-bottom: 1.5rem;
-        }
-        
-        .placeholder-benefits {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-            text-align: left;
-            display: inline-block;
-        }
-        
-        .placeholder-benefits li {
-            padding: 0.5rem 0;
-            color: #4a5568;
-        }
-        
-        .placeholder-cta {
-            display: inline-block;
-            background: #e2e8f0;
-            color: #2d3748;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .placeholder-cta:hover {
-            background: #cbd5e0;
-            transform: translateY(-2px);
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            margin-bottom: 3rem;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.1rem;
-            width: 100%;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-        
-        .contact-submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        .contact-info-row {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .contact-info-row .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #4b5563;
-        }
-        
-        .contact-info-row .contact-item i {
-            color: #667eea;
-            font-size: 1.25rem;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info-row {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4RSJ394H7V');
-
-  // Track phone clicks for lead generation
-  document.addEventListener('DOMContentLoaded', function() {
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        gtag('event', 'phone_click', {
-          'event_category': 'engagement',
-          'event_label': this.href.replace('tel:', ''),
-          'value': 1
-        });
-      });
-    });
-
-    // Track Get Listed button clicks
-    const ctaButtons = document.querySelectorAll('.cta-button, .hero-cta');
-    ctaButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        gtag('event', 'get_listed_click', {
-          'event_category': 'lead_generation',
-          'event_label': window.location.pathname,
-          'value': 1
-        });
-      });
-    });
-  });
-</script>\n</head>
-<body>
-    <!-- Hidden forms for Netlify to detect during build -->
-    <form name="business-listing" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="businessName">
-        <input type="text" name="contactName">
-        <input type="email" name="email">
-        <input type="tel" name="phone">
-        <input type="text" name="category">
-        <textarea name="message"></textarea>
-    </form>
     
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="contactName">
-        <input type="email" name="contactEmail">
-        <input type="tel" name="contactPhone">
-        <input type="text" name="contactReason">
-        <textarea name="contactMessage"></textarea>
-    </form>
-    <!-- Free Listing CTA Banner -->
-    <div class="cta-banner">
-        🎉 FREE 60-Day Trial for Pet Businesses! <a href="#contact-modal" onclick="openModal()">Claim Your Listing Now →</a>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RSJ394H7V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4RSJ394H7V');
+    </script>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🎉 FREE 60-Day Trial for Pet Businesses! 
+        <a href="#contact-modal">Claim Your Listing Now →</a>
     </div>
 
-    <header class="header">
+    <!-- Header -->
+    <header class="header" id="header">
         <nav class="nav">
-            <div class="logo">🐾 Vancouver Pet Services</div>
-            <button class="mobile-menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
+            <a href="#home" class="logo">🐾 Vancouver Pet Services</a>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#featured-businesses">Featured Partners</a></li>
                 <li><a href="#categories">Categories</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="business-signup.html" style="background: white; color: #667eea; padding: 0.5rem 1rem; border-radius: 20px;">List Your Business</a></li>
+                <li><a href="/business-signup" class="cta">List Your Business</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">🏆 Vancouver's #1 Pet Directory</div>
-            <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap;">
-                <div class="hero-badge" style="background: #e74c3c;">40+ Vancouver Pet Businesses Listed</div>
-                <div class="hero-badge" style="background: #f39c12; animation: pulse 2s infinite;">🎉 Free 60-Day Trial for New Businesses</div>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">40+</span>
+                    <span class="hero-stat-label">Vancouver Pet Businesses Listed</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">🎉</span>
+                    <span class="hero-stat-label">Free 60-Day Trial for New Businesses</span>
+                </div>
             </div>
+
             <h1 class="hero-title">
                 <span class="hero-title-line1">Find The Perfect</span>
                 <span class="hero-title-line2">Pet Care Services</span>
             </h1>
-            <p class="hero-subtitle">Connect with trusted veterinarians, groomers, trainers, and more in Vancouver, WA</p>
             
-            <div class="search-container">
-                <div class="search-box-wrapper">
-                    <div class="search-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <input type="text" placeholder="Try 'emergency vet' or 'dog grooming'..." id="searchInput" class="search-input">
-                    <button class="search-btn-modern" onclick="searchServices()">
-                        Find Services
-                    </button>
+            <p class="hero-subtitle">
+                Connect with trusted veterinarians, groomers, trainers, and more in Vancouver, WA
+            </p>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-container">
+                    <form class="search-wrapper" action="/search" method="GET">
+                        <div class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input 
+                            type="text" 
+                            class="search-input" 
+                            name="q"
+                            placeholder="Try 'emergency vet' or 'dog grooming'..."
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn">Find Services</button>
+                    </form>
                 </div>
-                <div class="quick-search-tags">
-                    <span class="quick-tag" onclick="quickSearch('emergency')">🚨 Emergency</span>
-                    <span class="quick-tag" onclick="quickSearch('grooming')">✂️ Grooming</span>
-                    <span class="quick-tag" onclick="quickSearch('boarding')">🏨 Boarding</span>
-                    <span class="quick-tag" onclick="quickSearch('vet')">🏥 Veterinary</span>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <a href="/emergency" class="quick-action">
+                        🚨 Emergency
+                    </a>
+                    <a href="/grooming" class="quick-action">
+                        ✂️ Grooming
+                    </a>
+                    <a href="/boarding" class="quick-action">
+                        🏨 Boarding
+                    </a>
+                    <a href="/veterinary" class="quick-action">
+                        🏥 Veterinary
+                    </a>
                 </div>
             </div>
-            
-            <div class="hero-cta-section">
-                <a href="business-signup.html" class="hero-cta-primary" style="text-decoration: none; display: inline-block;">
-                    <i class="fas fa-plus-circle"></i> List Your Business FREE
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="/business-signup" class="cta-primary">
+                    <i class="fas fa-plus"></i>
+                    List Your Business FREE
                 </a>
-                <span class="hero-cta-text">Join 40+ local pet businesses</span>
+                <div class="cta-secondary">Join 40+ local pet businesses</div>
             </div>
         </div>
-        
-        <div class="hero-visual">
-            <div class="floating-icon icon-1">🐕</div>
-            <div class="floating-icon icon-2">🐈</div>
-            <div class="floating-icon icon-3">🦴</div>
-            <div class="floating-icon icon-4">🐾</div>
-        </div>
+
+        <!-- Floating Elements -->
+        <div style="position: absolute; top: 20%; left: 10%; font-size: 3rem; opacity: 0.1; animation: float 6s ease-in-out infinite;">🐕</div>
+        <div style="position: absolute; top: 60%; right: 15%; font-size: 2.5rem; opacity: 0.1; animation: float 5s ease-in-out infinite reverse;">🐈</div>
+        <div style="position: absolute; bottom: 20%; left: 20%; font-size: 2rem; opacity: 0.1; animation: float 4s ease-in-out infinite;">🦴</div>
+        <div style="position: absolute; top: 40%; right: 25%; font-size: 2.5rem; opacity: 0.1; animation: float 7s ease-in-out infinite;">🐾</div>
     </section>
 
-    <!-- Featured Businesses Section -->
-    <section class="featured-businesses" id="featured-businesses">
-        <div class="featured-container">
-            <div class="featured-header">
-                <h2 class="featured-title">
-                    <span class="sparkle">✨</span>
-                    Featured Partners
-                    <span class="sparkle">✨</span>
-                </h2>
-                <p class="featured-subtitle">Premium showcases for exceptional pet businesses</p>
-            </div>
-            
+    <!-- Featured Partners Section -->
+    <section class="section section-alt" id="featured-businesses">
+        <div class="container">
+            <h2 class="section-title">✨ Featured Partners ✨</h2>
+            <p class="section-subtitle">Premium showcases for exceptional pet businesses</p>
+
             <div class="featured-grid">
-                <!-- Ruff Roads Featured Card -->
-                <div class="featured-card featured-active">
+                <!-- Featured Partner Card -->
+                <div class="featured-card">
                     <div class="featured-badge">⭐ FEATURED PARTNER</div>
-                    <div class="featured-image">
-                        <div class="featured-image-placeholder">
-                            🚐✨
-                        </div>
-                    </div>
+                    <div class="featured-icon">🚐✨</div>
                     <div class="featured-content">
-                        <h3 class="featured-name">Ruff Roads Mobile Grooming</h3>
+                        <h3 class="featured-title">Ruff Roads Mobile Grooming</h3>
                         <div class="featured-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
                             <span class="rating-text">5.0 (150+ reviews)</span>
                         </div>
-                        <p class="featured-tagline">Luxury Mobile Grooming at Your Door</p>
+                        <p class="featured-description">Luxury Mobile Grooming at Your Door</p>
                         <div class="featured-highlights">
-                            <span class="highlight">🫐 Blueberry Facials</span>
-                            <span class="highlight">🚐 State-of-the-Art Van</span>
-                            <span class="highlight">📍 Vancouver & Portland</span>
+                            <div class="highlight">🫐 Blueberry Facials</div>
+                            <div class="highlight">🚐 State-of-the-Art Van</div>
+                            <div class="highlight">📍 Vancouver & Portland</div>
                         </div>
-                        <a href="ruff-roads-showcase.html" class="featured-cta">
+                        <a href="/ruff-roads-showcase" class="featured-cta">
                             View Full Showcase →
                         </a>
                     </div>
                 </div>
-                
-                <!-- Placeholder Card 1 -->
-                <div class="featured-card featured-placeholder">
-                    <div class="placeholder-content">
-                        <div class="placeholder-icon">🏆</div>
-                        <h3 class="placeholder-title">Your Business Here</h3>
-                        <p class="placeholder-text">Get your own premium showcase</p>
-                        <ul class="placeholder-benefits">
-                            <li>✓ Dedicated showcase page</li>
-                            <li>✓ Priority placement</li>
-                            <li>✓ Instagram integration</li>
-                            <li>✓ Direct booking links</li>
-                        </ul>
-                        <a href="business-signup.html" class="placeholder-cta">
-                            Claim Your Spot - 60 Days Free!
-                        </a>
+
+                <!-- CTA Card -->
+                <div class="featured-card">
+                    <div class="featured-icon">🏆</div>
+                    <h3 class="featured-title">Your Business Here</h3>
+                    <p class="featured-description">Get your own premium showcase</p>
+                    <div class="featured-highlights">
+                        <div class="highlight">✓ Dedicated showcase page</div>
+                        <div class="highlight">✓ Priority placement</div>
+                        <div class="highlight">✓ Instagram integration</div>
+                        <div class="highlight">✓ Direct booking links</div>
                     </div>
+                    <a href="/business-signup" class="featured-cta">
+                        Claim Your Spot - 60 Days Free!
+                    </a>
                 </div>
-                
-                <!-- Placeholder Card 2 -->
-                <div class="featured-card featured-placeholder">
-                    <div class="placeholder-content">
-                        <div class="placeholder-icon">🌟</div>
-                        <h3 class="placeholder-title">Featured Listing Available</h3>
-                        <p class="placeholder-text">Join our exclusive partners</p>
-                        <ul class="placeholder-benefits">
-                            <li>✓ Professional photos</li>
-                            <li>✓ Customer testimonials</li>
-                            <li>✓ Service area maps</li>
-                            <li>✓ Social media feeds</li>
-                        </ul>
-                        <a href="business-signup.html" class="placeholder-cta">
-                            Get Started Today!
-                        </a>
+
+                <!-- Another CTA Card -->
+                <div class="featured-card">
+                    <div class="featured-icon">🌟</div>
+                    <h3 class="featured-title">Featured Listing Available</h3>
+                    <p class="featured-description">Join our exclusive partners</p>
+                    <div class="featured-highlights">
+                        <div class="highlight">✓ Professional photos</div>
+                        <div class="highlight">✓ Customer testimonials</div>
+                        <div class="highlight">✓ Service area maps</div>
+                        <div class="highlight">✓ Social media feeds</div>
                     </div>
+                    <a href="/business-signup" class="featured-cta">
+                        Get Started Today!
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number">40+</span>
-                Local Pet Businesses
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">6</span>
-                Service Categories
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">100%</span>
-                Vancouver, WA Focused
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Local Pet Businesses</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Service Categories</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Vancouver, WA Focused</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="categories-section" id="categories">
-        <h2 class="section-title">Browse Pet Services by Category</h2>
-        <div class="categories-grid">
-            <div class="category-card" onclick="location.href='veterinary.html'">
-                <div class="category-icon">🏥</div>
-                <h3>Veterinary Services</h3>
-                <p class="business-count">12+ Local Veterinarians & Emergency Care</p>
-            </div>
+    <!-- Categories Section -->
+    <section class="section section-alt" id="categories">
+        <div class="container">
+            <h2 class="section-title">Browse Pet Services by Category</h2>
             
-            <div class="category-card" onclick="location.href='grooming.html'">
-                <div class="category-icon">✂️</div>
-                <h3>Pet Grooming</h3>
-                <p class="business-count">8+ Grooming Salons & Mobile Services</p>
-            </div>
-            
-            <div class="category-card" onclick="location.href='boarding.html'">
-                <div class="category-icon">🏨</div>
-                <h3>Boarding & Daycare</h3>
-                <p class="business-count">10+ Boarding Facilities & Daycare Centers</p>
-            </div>
-            
-            <div class="category-card" onclick="location.href='training.html'">
-                <div class="category-icon">🎓</div>
-                <h3>Pet Training</h3>
-                <p class="business-count">6+ Professional Trainers & Classes</p>
-            </div>
-            
-            <div class="category-card" onclick="location.href='pet-stores.html'">
-                <div class="category-icon">🛍️</div>
-                <h3>Pet Stores & Supplies</h3>
-                <p class="business-count">8+ Local & Specialty Pet Stores</p>
-            </div>
-            
-            <div class="category-card" onclick="location.href='emergency.html'">
-                <div class="category-icon">🚨</div>
-                <h3>Emergency Services</h3>
-                <p class="business-count">4+ 24/7 Emergency Veterinary Care</p>
+            <div class="categories-grid">
+                <a href="/veterinary" class="category-card">
+                    <div class="category-icon">🏥</div>
+                    <h3 class="category-title">Veterinary Services</h3>
+                    <p class="category-description">12+ Local Veterinarians & Emergency Care</p>
+                </a>
+
+                <a href="/grooming" class="category-card">
+                    <div class="category-icon">✂️</div>
+                    <h3 class="category-title">Pet Grooming</h3>
+                    <p class="category-description">8+ Grooming Salons & Mobile Services</p>
+                </a>
+
+                <a href="/boarding" class="category-card">
+                    <div class="category-icon">🏨</div>
+                    <h3 class="category-title">Boarding & Daycare</h3>
+                    <p class="category-description">10+ Boarding Facilities & Daycare Centers</p>
+                </a>
+
+                <a href="/training" class="category-card">
+                    <div class="category-icon">🎓</div>
+                    <h3 class="category-title">Pet Training</h3>
+                    <p class="category-description">6+ Professional Trainers & Classes</p>
+                </a>
+
+                <a href="/pet-stores" class="category-card">
+                    <div class="category-icon">🛍️</div>
+                    <h3 class="category-title">Pet Stores & Supplies</h3>
+                    <p class="category-description">8+ Local & Specialty Pet Stores</p>
+                </a>
+
+                <a href="/emergency" class="category-card">
+                    <div class="category-icon">🚨</div>
+                    <h3 class="category-title">Emergency Services</h3>
+                    <p class="category-description">4+ 24/7 Emergency Veterinary Care</p>
+                </a>
             </div>
         </div>
     </section>
@@ -1162,405 +253,186 @@
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            <h2>Contact Us</h2>
-            <p class="contact-subtitle">Have a question, suggestion, or issue? We're here to help!</p>
-            
-            <form id="contactForm" name="contact" class="contact-form" method="POST" data-netlify="true" action="/success.html#contact">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Have a question, suggestion, or issue? We're here to help!</p>
+
+            <form class="contact-form" action="/success.html?form=contact" method="POST" data-netlify="true" name="contact">
                 <input type="hidden" name="form-name" value="contact">
-                <div class="form-row">
+                
+                <div class="form-grid">
                     <div class="form-group">
-                        <label for="contactName">Your Name *</label>
-                        <input type="text" id="contactName" name="contactName" required>
+                        <label for="name" class="form-label">Your Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="contactEmail">Email Address *</label>
-                        <input type="email" id="contactEmail" name="contactEmail" required>
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
                     </div>
                 </div>
-                
-                <div class="form-row">
+
+                <div class="form-grid">
                     <div class="form-group">
-                        <label for="contactPhone">Phone Number</label>
-                        <input type="tel" id="contactPhone" name="contactPhone">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
                     </div>
-                    
                     <div class="form-group">
-                        <label for="contactReason">Reason for Contact *</label>
-                        <select id="contactReason" name="contactReason" required>
+                        <label for="reason" class="form-label">Reason for Contact *</label>
+                        <select id="reason" name="reason" class="form-select" required>
                             <option value="">Select a reason</option>
-                            <option value="general">General Question</option>
-                            <option value="listing">Business Listing Inquiry</option>
-                            <option value="technical">Technical Issue</option>
-                            <option value="update">Update Business Info</option>
-                            <option value="complaint">Report an Issue</option>
-                            <option value="suggestion">Suggestion/Feedback</option>
-                            <option value="partnership">Partnership Opportunity</option>
-                            <option value="other">Other</option>
+                            <option value="General Question">General Question</option>
+                            <option value="Business Listing Inquiry">Business Listing Inquiry</option>
+                            <option value="Technical Issue">Technical Issue</option>
+                            <option value="Update Business Info">Update Business Info</option>
+                            <option value="Report an Issue">Report an Issue</option>
+                            <option value="Suggestion/Feedback">Suggestion/Feedback</option>
+                            <option value="Partnership Opportunity">Partnership Opportunity</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="contactMessage">Your Message *</label>
-                    <textarea id="contactMessage" name="contactMessage" rows="5" required placeholder="Please provide details about your inquiry..."></textarea>
+                    <label for="message" class="form-label">Your Message *</label>
+                    <textarea id="message" name="message" class="form-textarea" required 
+                              placeholder="Please describe your question or concern..."></textarea>
                 </div>
-                
-                <button type="submit" class="contact-submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send Message
+
+                <button type="submit" class="form-submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
                 </button>
             </form>
-            
-            <div class="contact-info-row">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
                 <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@vancouverpetservices.com</span>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>info@vancouverpetservices.com</p>
+                    </div>
                 </div>
+
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Vancouver, Washington</span>
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Location</h4>
+                        <p>Vancouver, Washington</p>
+                    </div>
                 </div>
+
                 <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <span>Response within 24 hours</span>
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Response Time</h4>
+                        <p>Response within 24 hours</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <h3>Vancouver Pet Services Directory</h3>
-            <p>Connecting Vancouver, WA pet owners with the best local pet care professionals.</p>
-            
-            <p style="margin: 2rem 0;">
-                <a href="privacy.html" style="color: white; text-decoration: underline; margin-right: 1rem;">Privacy Policy</a>
-                <a href="terms.html" style="color: white; text-decoration: underline;">Terms of Service</a>
+            <h3 class="footer-title">Vancouver Pet Services Directory</h3>
+            <p class="footer-description">
+                Connecting Vancouver, WA pet owners with the best local pet care professionals.
             </p>
-            
-            <p>&copy; 2025 Vancouver Pet Services Directory. Helping local pets and their families.</p>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vancouver Pet Services Directory. Helping local pets and their families.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>List Your Pet Business - FREE!</h2>
-            <p>Get a FREE 60-day trial listing on Vancouver Pet Services Directory</p>
-            
-            <form id="listingForm" name="business-listing" method="POST" data-netlify="true" action="/success.html">
-                <input type="hidden" name="form-name" value="business-listing">
-                <div class="form-group">
-                    <label for="businessName">Business Name *</label>
-                    <input type="text" id="businessName" name="businessName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="contactName">Your Name *</label>
-                    <input type="text" id="contactName" name="contactName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="category">Service Category *</label>
-                    <select id="category" name="category" required>
-                        <option value="">Select a category</option>
-                        <option value="veterinary">Veterinary Services</option>
-                        <option value="grooming">Pet Grooming</option>
-                        <option value="boarding">Boarding & Daycare</option>
-                        <option value="training">Pet Training</option>
-                        <option value="store">Pet Store & Supplies</option>
-                        <option value="other">Other Pet Services</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Tell us about your business</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Get My Free Listing!</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- Enhanced JavaScript -->
     <script src="ui-enhance.js"></script>
+    
     <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Modal functions
-        function openModal() {
-            document.getElementById('contactModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('contactModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Enhanced search functionality
-        function searchServices() {
-            const searchInput = document.getElementById('searchInput');
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            
-            if (!searchTerm) {
-                // Animate the search box to indicate it needs input
-                const searchBox = document.querySelector('.search-box-wrapper');
-                searchBox.classList.add('shake');
-                setTimeout(() => searchBox.classList.remove('shake'), 500);
-                searchInput.focus();
-                return;
-            }
-            
-            // Enhanced search mappings with more keywords
-            const searchMatches = {
-                'vet': 'veterinary.html',
-                'veterinary': 'veterinary.html',
-                'veterinarian': 'veterinary.html',
-                'animal hospital': 'veterinary.html',
-                'animal clinic': 'veterinary.html',
-                'pet hospital': 'veterinary.html',
-                'pet doctor': 'veterinary.html',
-                'groom': 'grooming.html',
-                'grooming': 'grooming.html',
-                'groomer': 'grooming.html',
-                'pet spa': 'grooming.html',
-                'dog wash': 'grooming.html',
-                'bath': 'grooming.html',
-                'nail': 'grooming.html',
-                'board': 'boarding.html',
-                'boarding': 'boarding.html',
-                'daycare': 'boarding.html',
-                'dog daycare': 'boarding.html',
-                'pet hotel': 'boarding.html',
-                'kennel': 'boarding.html',
-                'pet sitting': 'boarding.html',
-                'train': 'training.html',
-                'training': 'training.html',
-                'trainer': 'training.html',
-                'obedience': 'training.html',
-                'behavior': 'training.html',
-                'puppy': 'training.html',
-                'pet store': 'pet-stores.html',
-                'pet shop': 'pet-stores.html',
-                'supplies': 'pet-stores.html',
-                'food': 'pet-stores.html',
-                'pet food': 'pet-stores.html',
-                'toys': 'pet-stores.html',
-                'emergency': 'emergency.html',
-                '24 hour': 'emergency.html',
-                '24/7': 'emergency.html',
-                'urgent': 'emergency.html',
-                'after hours': 'emergency.html'
-            };
-            
-            // Check if search term matches any category
-            for (const [keyword, page] of Object.entries(searchMatches)) {
-                if (searchTerm.includes(keyword)) {
-                    // Add loading animation
-                    const btn = document.querySelector('.search-btn-modern');
-                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Finding...';
-                    
-                    setTimeout(() => {
-                        window.location.href = page;
-                    }, 300);
-                    return;
-                }
-            }
-            
-            // If no specific match, show helpful message and categories
-            if (searchTerm.includes('dog') || searchTerm.includes('cat') || searchTerm.includes('pet')) {
-                showSearchMessage('Showing all pet service categories', 'info');
-                document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
-            } else {
-                showSearchMessage(`No exact match for "${searchTerm}". Browse our categories below:`, 'warning');
-                document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-        
-        // Quick search function for tags
-        function quickSearch(term) {
-            document.getElementById('searchInput').value = term;
-            searchServices();
-        }
-        
-        // Show search message
-        function showSearchMessage(message, type) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `search-message ${type}`;
-            messageDiv.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
-            messageDiv.style.cssText = `
-                position: fixed;
-                top: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: ${type === 'warning' ? '#f59e0b' : '#3b82f6'};
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 50px;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-                z-index: 1000;
-                animation: slideDown 0.5s ease-out;
-            `;
-            
-            document.body.appendChild(messageDiv);
-            
-            setTimeout(() => {
-                messageDiv.style.animation = 'slideUp 0.5s ease-out';
-                setTimeout(() => messageDiv.remove(), 500);
-            }, 3000);
-        }
-        
-        // Enhanced search interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                // Enter key to search
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchServices();
-                    }
-                });
-                
-                // Focus animation
-                searchInput.addEventListener('focus', function() {
-                    document.querySelector('.search-box-wrapper').classList.add('focused');
-                });
-                
-                searchInput.addEventListener('blur', function() {
-                    document.querySelector('.search-box-wrapper').classList.remove('focused');
-                });
-                
-                // Auto-suggestions (future enhancement)
-                let searchTimeout;
-                searchInput.addEventListener('input', function() {
-                    clearTimeout(searchTimeout);
-                    searchTimeout = setTimeout(() => {
-                        // Could add auto-suggestions here
-                    }, 300);
-                });
-            }
-            
-            // Add animation classes
-            const style = document.createElement('style');
-            style.textContent = `
-                .shake {
-                    animation: shake 0.5s ease-in-out;
-                }
-                
-                @keyframes shake {
-                    0%, 100% { transform: translateX(0); }
-                    25% { transform: translateX(-10px); }
-                    75% { transform: translateX(10px); }
-                }
-                
-                @keyframes slideDown {
-                    from { transform: translate(-50%, -100%); opacity: 0; }
-                    to { transform: translate(-50%, 0); opacity: 1; }
-                }
-                
-                @keyframes slideUp {
-                    from { transform: translate(-50%, 0); opacity: 1; }
-                    to { transform: translate(-50%, -100%); opacity: 0; }
-                }
-                
-                .search-box-wrapper.focused {
-                    transform: translateY(-2px) scale(1.02);
-                    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
-                }
-                
-                .fas.fa-spinner.fa-spin {
-                    animation: spin 1s linear infinite;
-                }
-                
-                @keyframes spin {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-            `;
-            document.head.appendChild(style);
-        });
-
-        // Note: Forms now use Netlify Forms - submissions will appear in your Netlify dashboard
-        // You'll get email notifications for each submission
-        // To access: Log into Netlify > Your Site > Forms
-
         // Search functionality
-        function searchServices() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            if (searchTerm.includes('vet') || searchTerm.includes('doctor') || searchTerm.includes('medical')) {
-                window.location.href = 'veterinary.html';
-            } else if (searchTerm.includes('groom') || searchTerm.includes('bath') || searchTerm.includes('cut')) {
-                window.location.href = 'grooming.html';
-            } else if (searchTerm.includes('board') || searchTerm.includes('daycare') || searchTerm.includes('stay')) {
-                window.location.href = 'boarding.html';
-            } else if (searchTerm.includes('train') || searchTerm.includes('class') || searchTerm.includes('behavior')) {
-                window.location.href = 'training.html';
-            } else if (searchTerm.includes('store') || searchTerm.includes('food') || searchTerm.includes('supply')) {
-                window.location.href = 'pet-stores.html';
-            } else if (searchTerm.includes('emergency') || searchTerm.includes('urgent') || searchTerm.includes('24')) {
-                window.location.href = 'emergency.html';
+        document.querySelector('.search-wrapper').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = this.querySelector('.search-input').value.toLowerCase();
+            
+            // Simple keyword routing
+            if (query.includes('vet') || query.includes('doctor') || query.includes('emergency')) {
+                window.location.href = '/veterinary.html';
+            } else if (query.includes('groom') || query.includes('bath') || query.includes('clip')) {
+                window.location.href = '/grooming.html';
+            } else if (query.includes('board') || query.includes('daycare') || query.includes('stay')) {
+                window.location.href = '/boarding.html';
+            } else if (query.includes('train') || query.includes('obedience') || query.includes('behavior')) {
+                window.location.href = '/training.html';
+            } else if (query.includes('store') || query.includes('food') || query.includes('supply')) {
+                window.location.href = '/pet-stores.html';
             } else {
-                alert('Try searching for: veterinary, grooming, boarding, training, stores, or emergency');
+                // Default to veterinary for medical terms
+                window.location.href = '/veterinary.html';
             }
-        }
-        
-        // Allow Enter key to search
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchServices();
+            
+            // Track search
+            gtag('event', 'search', {
+                'search_term': query,
+                'event_category': 'engagement'
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
-        
-        // Smooth scrolling for navigation links
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') === '#') return;
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
         });
 
-        // Google Analytics placeholder
-        // Replace UA-XXXXX-Y with your tracking ID when ready
-        /*
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXX-Y');
-        */
+        // Loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.hero-content > *');
+            elements.forEach((el, index) => {
+                el.classList.add('loading');
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0px) rotate(0deg);
+                }
+                50% {
+                    transform: translateY(-20px) rotate(180deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
-</html><!-- AUTO-DEPLOY TEST -->
-<!-- This comment was added by Claude 4 automation to test the deploy pipeline -->
-<!-- Test timestamp: 2025-05-29 20:35 PST -->
-<!-- AUTO-DEPLOY CONNECTION TEST -->
-<!-- This test comment added by Claude 4 to verify the GitHub → Netlify pipeline -->
-<!-- Test timestamp: May 29, 2025 - 22:45 PST -->
-<!-- Connection status: VERIFIED ✅ -->
+</html>

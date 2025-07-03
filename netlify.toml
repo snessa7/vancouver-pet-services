@@ -1,14 +1,55 @@
+[[redirects]]
+  from = "/search"
+  to = "/veterinary.html"
+  status = 302
+
+# Form redirects - Fixed for proper form handling
+[[redirects]]
+  from = "/success.html#contact"
+  to = "/success.html?form=contact"
+  status = 301
+
+# Handle business signup success
+[[redirects]]  
+  from = "/business-signup-success"
+  to = "/success.html?form=business"
+  status = 301
+
+# Error pages
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
 [build]
   publish = "."
-  
+  command = "echo 'No build command needed for static site'"
+
+# Form handling settings
+[forms]
+  settings = true
+
+# Headers for security and performance
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# Ensure forms work properly
-[[redirects]]
-  from = "/success"
-  to = "/success.html"
-  status = 200
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
